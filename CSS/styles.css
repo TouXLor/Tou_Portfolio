@@ -1,1 +1,96 @@
+body{
+    font-family: "Gowun Batang", serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+}
 
+h1, h2 {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+h1{
+    font-size: 80px;
+}
+h2{
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.profileImg{
+    border-radius: 50%;
+
+}
+
+
+.colNarrow {
+    width: 24%;
+    float: left;
+    margin-right: 50px;
+    
+}
+
+.colWide {
+    width: 70%;
+    float: left;
+}
+
+.colInfo {
+    width: 70%;
+    float: left;
+    padding-top: 70px;
+}
+
+
+header, footer {
+    background: #152b48;
+    color: #c8d2e0;
+    
+}
+
+header h1{
+    color: #edf2f4;
+    margin: 0;
+}
+
+footer{
+    text-align: center;
+}
+
+.contentwrap{
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: auto;
+}
+
+.work{
+    background: #c8d2e0;
+}
+
+.education{
+background: #c8d2e0;
+
+
+}
+
+.skills{ 
+    background: #c8d2e0;
+}
+.project{
+    background: #c8d2e0;
+}
+
+
+a{
+    color: lightblue;
+}
+
+div a:hover {
+    text-decoration: none;
+  color: white;
+}
+ div a:focus {
+    outline: 1px solid blue;
+ }
