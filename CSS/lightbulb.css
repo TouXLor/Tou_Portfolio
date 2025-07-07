@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+/* hide the real checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+.display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+label {
+  width: 60px;
+  height: 35px;
+  border-radius: 999px;
+  background: #f3f3f3;
+  box-shadow: inset 10px 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* the knob */
+.circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
+    inset -10px -10px 30px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  transition: left 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.circle svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+/* default: sun on, moon off */
+.circle .sun {
+  opacity: 1;
+  color: #ffd600;
+}
+.circle .moon {
+  opacity: 0;
+  color: #333;
+}
+
+/* when toggled, track changes */
+input[type="checkbox"]:checked + .display {
+  background: none;
+}
+input[type="checkbox"]:checked + .display label {
+  background: #484848;
+  box-shadow: inset 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* keep the knob a fixed 28×28px square and slide it right */
+input[type="checkbox"]:checked + .display label .circle {
+  left: calc(100% - 4px - 28px);
+  background: #fdfdff;
+}
+
+/* swap icons by fading them in/out via opacity */
+input[type="checkbox"]:checked + .display label .circle .sun {
+  opacity: 0;
+  color: #000000; /* or whatever light color you like */
+}
+input[type="checkbox"]:checked + .display label .circle .moon {
+  opacity: 1;
+  color: #000000; /* or whatever dark color you like */
+}
+
+/* remove that crazy active stretch */
+label:active .circle {
+  width: 28px;
+}
