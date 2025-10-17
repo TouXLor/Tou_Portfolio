@@ -1,0 +1,58 @@
+[
+  {
+    "title": "CoHabit",
+    "type": "Web/Mobile Development",
+    "category": "dev",
+    "image": "./img/cohabit.png",
+    "summary": "Roommate matching app that helps students find compatible roommates and manage shared living tasks."
+  },
+  {
+    "title": "StarFish Redesign",
+    "type": "UI/UX Design",
+    "category": "design",
+    "image": "./img/dishDive.png",
+    "summary": "A complete UI redesign focused on improving accessibility and user flow for StarFish, a student resource platform."
+  },
+  {
+    "title": "CoHabit",
+    "type": "Web/Mobile Development",
+    "category": "dev",
+    "image": "./img/cohabit.png",
+    "summary": "Roommate matching app that helps students find compatible roommates and manage shared living tasks."
+  },
+  {
+    "title": "StarFish Redesign",
+    "type": "UI/UX Design",
+    "category": "design",
+    "image": "./img/dishDive.png",
+    "summary": "A complete UI redesign focused on improving accessibility and user flow for StarFish, a student resource platform."
+  },
+  {
+    "title": "DishDive",
+    "type": "Front-End Development",
+    "category": "dev",
+    "image": "./img/dishDive.png",
+    "summary": "Recipe-sharing website built with HTML, CSS, and JavaScript that lets users browse, comment, and rate dishes. Designed with a clean layout and interactive features."
+  },
+  {
+    "title": "LawBandit UX Redesign",
+    "type": "UX Research / Case Study",
+    "category": "case",
+    "image": "./img/dishDive.png",
+    "summary": "Case study that explored pain points in a legal education platform. Created wireframes and prototypes to streamline user flow and improve learning engagement."
+  },
+  {
+    "title": "Badger Mart",
+    "type": "Web/Mobile Development",
+    "category": "dev",
+    "image": "./img/dishDive.png",
+    "summary": "AI-powered campus marketplace concept that allows students to list, buy, and sell items with smart search and mobile-first design principles."
+  },
+  {
+    "title": "LPHIE Chapter Website",
+    "type": "Web Development",
+    "category": "dev",
+    "image": "./img/dishDive.png",
+    "summary": "Website built for Lambda Phi Epsilon International Fraternity. Implemented responsive layouts and interactive content to enhance recruitment and alumni engagement."
+  }
+]
