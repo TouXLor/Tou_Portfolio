@@ -8,19 +8,6 @@ body {
   background-color: rgb(17, 17, 17);
   min-height: 100vh;
   margin: 0;
-  color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sun {
-  display: block;
-}
-.moon {
-  display: block;
-}
-body.dark {
-  background-color: #bbbbcc;
-  color: #111;
 }
 
 img {
@@ -36,7 +23,7 @@ a {
   font-size: 1.8rem;
 }
 
-nav {
+.header-navbar {
   font-family: "Kumar One", cursive;
   position: fixed;
   top: 0;
@@ -47,7 +34,7 @@ nav {
   z-index: 2;
 }
 
-nav > div {
+.header-navbar > div {
   flex: 1;
 }
 .logo {
@@ -150,24 +137,6 @@ nav > div {
   font-size: 1.5em;
   margin-top: auto;
 }
-.experiences-header {
-  font-family: "Kumar One", cursive;
-  color: white;
-  font-size: 2.5rem;
-  text-align: center;
-}
-.project-header {
-  font-family: "Kumar One", cursive;
-  color: white;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-body.dark a,
-body.dark h1,
-body.dark p {
-  color: black; /* whatever “dark-mode” text color you want */
-}
 
 /* Medium screens (e.g. portrait tablets, small laptops) */
 @media (max-width: 900px) {
@@ -204,4 +173,124 @@ body.dark p {
   .skill-table th p {
     font-size: 1.2rem;
   }
+}
+
+.education {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.education-header {
+  font-family: "Kumar One", cursive;
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.education-title {
+  font-family: "Kulim Park", sans-serif;
+  margin-top: 10rem;
+  font-size: 1.7rem;
+  color: white;
+}
+
+.education-degree,
+.education-date {
+  font-family: "Kulim Park", sans-serif;
+  font-size: 1.5rem;
+}
+
+.education-date {
+  margin-bottom: 10rem;
+}
+.card.is-hidden {
+  display: none; /* simplest to start */
+}
+/* optional polish later: use opacity/scale transitions instead of display:none */
+
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.experiences-header {
+  font-family: "Kumar One", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-top: 5rem;
+}
+
+.experience-nav {
+  display: flex;
+  justify-content: center;
+  font-family: "Kumar One", cursive;
+  font-size: 1.5rem;
+  list-style: none;
+  margin: 1.5rem 0px;
+  padding: 0px;
+}
+
+.experience-nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0.2em 0.6em;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.experience-nav button.active,
+.experience-nav button:focus,
+.experience-nav button:hover {
+  color: #fff;
+  text-decoration: underline;
+  outline: none;
+}
+
+.project-header {
+  font-family: "Kumar One", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-top: 5rem;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: center;
+  font-family: "Kumar One", cursive;
+  font-size: 1.5rem;
+  list-style: none;
+  margin: 1.5rem 0px;
+  padding: 0px;
+}
+
+.project-nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0.2em 0.6em;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.project-nav button.active,
+.project-nav button:focus,
+.project-nav button:hover {
+  color: #fff;
+  text-decoration: underline;
+  outline: none;
 }

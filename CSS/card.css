@@ -2,19 +2,17 @@
   display: grid;
   place-items: center;
   margin-inline: 1.5rem;
-  padding-block: 5rem;
 }
 
 .card-container {
   display: grid;
-  row-gap: 3.5rem;
+  row-gap: 1.5rem;
 }
 
 .card-article {
   position: relative;
   overflow: hidden;
   transform: translateY(20px);
-  opacity: 0;
   transition: transform 0.6s ease, opacity 0.6s ease;
   transform-origin: center center;
   border-radius: 1rem;
@@ -36,7 +34,6 @@
 }
 .card-img {
   width: auto; /* up from 328px */ /* so it never overflows its container */
-  max-width: 400px;
   height: auto; /* keep the aspect ratio */
   border-radius: 1.4rem;
   object-fit: cover;
@@ -122,7 +119,7 @@
 .card-article:not(:hover) .card-data {
   animation: remove-data 1s forwards;
 }
-/* Data Card Transformation */
+
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -159,7 +156,7 @@
     overflow: hidden;
   }
 }
-/* Re-sizing --------------------------------*/
+
 /* For all size */
 @media (max-width: 900px) {
   .links,
@@ -178,30 +175,19 @@
 
 /* Small Devices */
 @media screen and (max-width: 340px) {
-  .card-container {
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
-  }
   container {
-    padding-block: 2rem;
-    margin-inline: 0.5rem;
+    margin-inline: 1rem;
   }
   .card-data {
     width: 250px;
     padding: 1rem;
   }
-  .card-data {
-    width: 90%; /* narrower pop-up */
-  }
 }
 /* Medium Devices */
 @media screen and (min-width: 768px) {
   .card-container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-  }
-  .container {
-    padding-block: 3rem;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 2.5rem;
   }
 }
 
@@ -209,7 +195,7 @@
 
 @media screen and (min-width: 1120px) {
   .container {
-    height: 100vh;
+    height: auto;
   }
   .card-container {
     grid-template-columns: repeat(3, 1fr);
