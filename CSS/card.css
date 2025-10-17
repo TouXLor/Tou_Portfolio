@@ -41,22 +41,21 @@
 
 .card-data {
   font-family: "Kulim Park", sans-serif;
-  width: 220px;
+  width: 80%;
   height: auto;
-  background-color: var(--container-color);
-  padding: 1.5rem 2rem;
-  border-radius: 1rem;
   position: absolute;
   bottom: -9rem;
-  left: 0;
-  right: 0;
-  margin-inline: auto;
-  transition: opacity 1s 1s;
+  left: 0px;
+  right: 0px;
   opacity: 0;
   color: black;
   background-color: white;
   z-index: 1;
   transform-origin: center center;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  margin-inline: auto;
+  transition: opacity 1s 1s;
 }
 
 .card-description {
