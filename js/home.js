@@ -50,34 +50,17 @@ document.querySelectorAll(".card-article").forEach((card) => {
   });
 });
 
-document.querySelectorAll(".toggle").forEach((checkbox) => {
-  checkbox.addEventListener("change", () => {
-    // find the card container
-    const card = checkbox.closest(".card-article");
-    if (!card) return;
-
-    // toggle the sun/moon icons inside this card
-    const sunIcon = card.querySelector(".sun");
-    const moonIcon = card.querySelector(".moon");
-    if (sunIcon && moonIcon) {
-      sunIcon.classList.toggle("active", !checkbox.checked);
-      moonIcon.classList.toggle("active", checkbox.checked);
-    }
-
-    // toggle the card's active state
-    card.classList.toggle("active", checkbox.checked);
-
-    // update the button text
-    const btn = card.querySelector(".card-button");
-    if (btn) {
-      btn.textContent = checkbox.checked ? "Close" : "Read More";
-    }
-  });
-});
-
-const toggle = document.getElementById("toggle");
-
-toggle.addEventListener("change", () => {
-  // if checked, add .dark to <body>; otherwise remove it
-  document.body.classList.toggle("dark", toggle.checked);
+// Light/Dark mode toggle logic
+document.addEventListener("DOMContentLoaded", function () {
+  var toggle = document.getElementById("toggle");
+  var body = document.body;
+  if (toggle) {
+    toggle.addEventListener("change", function () {
+      if (toggle.checked) {
+        body.classList.add("light-mode");
+      } else {
+        body.classList.remove("light-mode");
+      }
+    });
+  }
 });
