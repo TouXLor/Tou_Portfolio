@@ -49,18 +49,3 @@ document.querySelectorAll(".card-article").forEach((card) => {
     }
   });
 });
-
-// Light/Dark mode toggle logic
-document.addEventListener("DOMContentLoaded", function () {
-  var toggle = document.getElementById("toggle");
-  var body = document.body;
-  if (toggle) {
-    toggle.addEventListener("change", function () {
-      if (toggle.checked) {
-        body.classList.add("light-mode");
-      } else {
-        body.classList.remove("light-mode");
-      }
-    });
-  }
-});

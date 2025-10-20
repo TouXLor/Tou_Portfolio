@@ -13,33 +13,6 @@ body {
   background-color: rgb(17, 17, 17);
   min-height: 100vh;
   margin: 0;
-  transition: background 0.4s, color 0.4s;
-}
-
-body.light-mode {
-  background: #939393;
-  color: #222;
-}
-body.light-mode p,
-body.light-mode a,
-body.light-mode .focus-point,
-body.light-mode .header-navbar,
-body.light-mode .education-header,
-body.light-mode .project-header,
-body.light-mode .experiences-header,
-body.light-mode .skill-header,
-body.light-mode .education-title,
-body.light-mode .project-nav button,
-body.light-mode .experience-nav button {
-  color: #222 !important;
-}
-body.light-mode .card-container .loading,
-body.light-mode .card-container .error {
-  color: #444;
-}
-body.light-mode .card-container .error {
-  color: #b00;
-  background: rgba(255, 0, 0, 0.07);
 }
 img {
   width: 100%;
@@ -243,9 +216,12 @@ a {
 }
 /* optional polish later: use opacity/scale transitions instead of display:none */
 
-.experience-section {
-  margin-bottom: 10rem;
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
+
 .experiences-header {
   font-family: "Kumar One", cursive;
   font-size: 2.5rem;
@@ -285,16 +261,6 @@ a {
   outline: none;
 }
 
-.projects-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.project-section {
-  margin-bottom: 10rem;
-}
-
 .project-header {
   font-family: "Kumar One", cursive;
   font-size: 2.5rem;
@@ -332,59 +298,4 @@ a {
   color: #fff;
   text-decoration: underline;
   outline: none;
-}
-
-/* Fade animation for cards when filtering */
-.card-article {
-  will-change: opacity, transform;
-  opacity: 1;
-  transition: opacity 500ms ease, transform 500ms ease;
-}
-.card-article.is-hidden {
-  opacity: 0;
-  transform: translateY(8px) scale(0.995);
-  pointer-events: none;
-}
-
-/* Loading / error UI for grids */
-.card-container .loading,
-.card-container .error {
-  grid-column: 1 / -1; /* span full width of grid */
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #ddd;
-  font-family: "Kulim Park", sans-serif;
-  font-size: 1.2rem;
-}
-.card-container .error {
-  color: #ffdddd;
-  background: rgba(255, 0, 0, 0.03);
-  border-radius: 8px;
-}
-
-/* Download Resume Button */
-.resume-download-btn {
-  display: inline-block;
-  padding: 0.8em 2em;
-  font-size: 1rem;
-  font-family: "Kumar One", cursive;
-  color: #ffffff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  margin-bottom: 1em;
-}
-.resume-download-btn:hover {
-  background: #444;
-  color: #ffffff;
-}
-.resume-download-btn:active {
-  background: #111;
-}
-
-/* make sure the card container uses a responsive grid */
-.card-container {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }

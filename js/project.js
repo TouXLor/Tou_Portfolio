@@ -56,45 +56,21 @@
   const cards = data.map(createCard).join("");
   grid.innerHTML = cards || "<p>No projects to display</p>";
 
-  // Add filter functionality (robust: support multi-category values and show/hide via style)
+  // Add filter functionality
   nav.addEventListener("click", (e) => {
-    const btn = e.target.closest("button");
-    if (!btn) return;
+    if (e.target.tagName === "BUTTON") {
+      const filter = e.target.dataset.filter;
+      nav
+        .querySelectorAll("button")
+        .forEach((btn) => btn.classList.toggle("active", btn === e.target));
 
-    const filter = (btn.dataset.filter || "all").toString();
-
-    // toggle active class
-    nav
-      .querySelectorAll("button")
-      .forEach((b) => b.classList.toggle("active", b === btn));
-
-    // for each card, check its data-category (allow multiple categories separated by space or comma)
-    grid.querySelectorAll(".card-article").forEach((card) => {
-      const raw = card.dataset.category || "";
-      const cats = raw
-        .toString()
-        .split(/[,\s]+/) // split on commas or whitespace
-        .map((s) => s.trim().toLowerCase())
-        .filter(Boolean);
-
-      if (filter === "all" || cats.includes(filter.toLowerCase())) {
-        // show with fade: remove is-hidden and ensure element is layout-visible
-        card.classList.remove("is-hidden");
-        card.style.display = "";
-        // force reflow so transition runs if previously hidden
-        void card.offsetWidth;
-        card.style.opacity = "";
-      } else {
-        // start fade then remove from layout after transition
-        card.classList.add("is-hidden");
-        // after transition, set display:none to remove from layout
-        const onEnd = (ev) => {
-          if (ev.propertyName !== "opacity") return;
-          card.style.display = "none";
-          card.removeEventListener("transitionend", onEnd);
-        };
-        card.addEventListener("transitionend", onEnd);
-      }
-    });
+      grid.querySelectorAll(".card-article").forEach((card) => {
+        if (filter === "all" || card.dataset.category.includes(filter)) {
+          card.classList.remove("is-hidden");
+        } else {
+          card.classList.add("is-hidden");
+        }
+      });
+    }
   });
 })();
