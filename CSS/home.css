@@ -36,7 +36,7 @@ a {
   font-size: 1.8rem;
 }
 
-nav {
+.header-navbar {
   font-family: "Kumar One", cursive;
   position: fixed;
   top: 0;
@@ -47,7 +47,7 @@ nav {
   z-index: 2;
 }
 
-nav > div {
+.header-navbar > div {
   flex: 1;
 }
 .logo {
@@ -204,4 +204,99 @@ body.dark p {
   .skill-table th p {
     font-size: 1.2rem;
   }
+}
+
+.project-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-family: "Kumar One", cursive;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+/* style the buttons themselves */
+.project-nav button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: text-decoration 0.2s ease;
+  font: inherit; /* keep the same font as parent */
+}
+
+/* hover underline */
+.project-nav button:hover {
+  text-decoration: underline;
+}
+
+/* optional: active/selected state (matches aria-pressed) */
+.project-nav button[aria-pressed="true"] {
+  text-decoration: underline;
+}
+
+.experience-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-family: "Kumar One", cursive;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+/* style the buttons themselves */
+.experience-nav button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: text-decoration 0.2s ease;
+  font: inherit; /* keep the same font as parent */
+}
+
+/* hover underline */
+.experience-nav button:hover {
+  text-decoration: underline;
+}
+
+/* active state - change this line */
+.experience-nav button.active {
+  text-decoration: underline;
+}
+
+.education-header {
+  font-family: "Kumar One", cursive;
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* Center the education section and its items */
+.education {
+  display: grid;
+  grid-template-columns: 1fr; /* single column for centering */
+  justify-items: center; /* center items horizontally */
+  align-items: center; /* center items vertically */
+  text-align: center; /* center text inside items */
+}
+
+/* Use the same font and size for all text */
+.education-title,
+.education-degree,
+.education-date {
+  font-family: "Kulim Park", sans-serif;
+  font-size: 1.5rem; /* set all to the same size, adjust as needed */
+}
+
+.education-title {
+  margin-top: 10rem;
+  font-size: 1.7rem;
+}
+
+.education-date {
+  margin-bottom: 10rem;
 }

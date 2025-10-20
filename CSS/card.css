@@ -7,14 +7,16 @@
 
 .card-container {
   display: grid;
-  row-gap: 3.5rem;
+  grid-template-columns: repeat(3, 1fr); /* always 3 columns on desktop */
+  gap: 2rem;
+  min-height: auto; /* adjust as needed for your tallest card set */
+  align-items: start;
 }
 
 .card-article {
   position: relative;
   overflow: hidden;
   transform: translateY(20px);
-  opacity: 0;
   transition: transform 0.6s ease, opacity 0.6s ease;
   transform-origin: center center;
   border-radius: 1rem;
@@ -44,7 +46,7 @@
 
 .card-data {
   font-family: "Kulim Park", sans-serif;
-  width: 220px;
+  width: 80%;
   height: auto;
   background-color: var(--container-color);
   padding: 1.5rem 2rem;
@@ -93,10 +95,14 @@
   opacity: 1;
   transition: opacity 0.3s;
 }
-
+/* .card-article.active {
+  height: 100vh;
+  transition: height 0.4s ease;
+} */
 .card-article.active .card-data {
   transform: translate(0) scale() !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25) !important;
+  z-index: 10 !important;
 }
 
 .card-extra {
@@ -121,6 +127,10 @@
 
 .card-article:not(:hover) .card-data {
   animation: remove-data 1s forwards;
+}
+
+.card-article.is-hidden {
+  display: none; /* simplest to start */
 }
 /* Data Card Transformation */
 @keyframes show-data {
@@ -209,7 +219,7 @@
 
 @media screen and (min-width: 1120px) {
   .container {
-    height: 100vh;
+    height: auto;
   }
   .card-container {
     grid-template-columns: repeat(3, 1fr);
@@ -325,4 +335,75 @@
   to {
     transform: translateX(0);
   }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 1002;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+  --thickness: 4px;
+  background: none;
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% + var(--thickness)),
+    0 calc(100% + var(--thickness))
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% + var(--thickness)),
+    0 calc(100% + var(--thickness))
+  );
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+  -webkit-mask-image: none;
+  padding: 2px 0;
+  position: relative;
+  text-transform: uppercase;
+}
+
+#projects-grid {
+  display: grid;
+  gap: 1rem;
+}
+#experience-grid {
+  display: grid;
+  gap: 1rem;
+}
+.card-article {
+  display: block;
+  background: #111;
+  border: 1px solid #222;
+  color: #fff;
 }
