@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Graphic & Web Design Intern",
+    "organization": "IH Concepts",
+    "category": "internship",
+    "image": "./img/adobe_forLphie.jpeg",
+    "summary": "Worked on WordPress-based client sites using custom PHP shortcodes, CSS, and responsive design principles. Created tutorial posts and improved site functionality for better user engagement."
+  },
+  {
+    "title": "Resident Technology Support Liaison",
+    "organization": "Cedar Community",
+    "category": "work",
+    "image": "./img/adobe_forLphie.jpeg",
+    "summary": "Assisted senior residents with technology issues, teaching them to use smartphones, tablets, and computers. Improved digital literacy and accessibility within the community."
+  },
+  {
+    "title": "Web Design Chair",
+    "organization": "Lambda Phi Epsilon International Fraternity, Inc.",
+    "category": "freelance",
+    "image": "./img/adobe_forLphie.jpeg",
+    "summary": "Redesigned the fraternity’s website and developed responsive layouts with HTML/CSS/JS. Collaborated with chapter members to improve usability and modernize the digital presence."
+  },
+  {
+    "title": "Fundraising Chair",
+    "organization": "Lambda Phi Epsilon International Fraternity, Inc.",
+    "category": "freelance",
+    "image": "./img/adobe_forLphie.jpeg",
+    "summary": "Organized and led fundraising events to support chapter activities, building event management and teamwork skills."
+  },
+  {
+    "title": "Social Chair",
+    "organization": "Lambda Phi Epsilon International Fraternity, Inc.",
+    "category": "freelance",
+    "image": "./img/adobe_forLphie.jpeg",
+    "summary": "Planned and hosted social events that strengthened community and collaboration across chapters."
+  },
+  {
+    "title": "Volunteer Photographer",
+    "organization": "Community Art Events – Madison",
+    "category": "freelance",
+    "image": "./img/adobe_forLphie.jpeg",
+    "summary": "Captured photos for local art exhibitions and community events, focusing on storytelling and visual design through composition and lighting."
+  }
+]
