@@ -83,17 +83,64 @@ a {
   justify-content: flex-end;
   align-items: center;
 }
+
+:root {
+  --gap: 3rem; /* space between names */
+  --speed: 30s; /* lower = faster */
+}
+
 .focus-point {
-  font-family: "Kumar One", cursive;
-  color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
-  font-size: xxx-large;
+  overflow: hidden;
+  color: #fff;
+  font-family: "Kumar One", cursive;
 }
+
+/* outer strip */
+.name-ticker {
+  display: flex; /* lays tracks side-by-side */
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+  gap: 4rem;
+}
+
+/* each moving track */
+.track {
+  display: inline-flex;
+  gap: var(--gap);
+  flex-shrink: 0; /* do not compress */
+  min-width: 100%; /* at least viewport width */
+  animation: slide var(--speed) linear infinite;
+}
+
+/* text */
+.track span {
+  font-size: clamp(2rem, 8vw, 6rem);
+  letter-spacing: 0.02em;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  } /* exactly one track width */
+}
+
+/* motion-safe */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
+
 .bio {
   font-family: "Kulim Park", sans-serif;
   display: grid;
@@ -388,3 +435,5 @@ a {
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
+
+/* <------------ End of CSS/home.css --> */
