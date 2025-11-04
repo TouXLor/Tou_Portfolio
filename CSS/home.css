@@ -88,8 +88,8 @@ a {
   --gap: 3rem; /* space between names */
   --speed: 30s; /* lower = faster */
 }
-
 .focus-point {
+  position: relative;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -99,15 +99,26 @@ a {
   color: #fff;
   font-family: "Kumar One", cursive;
 }
-
+.landing-picture {
+  position: relative;
+  z-index: 1; /* on top */
+  pointer-events: none;
+}
+.landing-picture img {
+  max-height: 90vh; /* scale as you like */
+  height: auto;
+}
 /* outer strip */
 .name-ticker {
-  display: flex; /* lays tracks side-by-side */
-  width: 100%;
+  position: absolute; /* stretch behind the photo */
+  inset: 0; /* top/right/bottom/left: 0 */
+  display: flex;
+  align-items: center; /* center the tracks vertically */
   overflow: hidden;
-  user-select: none;
   white-space: nowrap;
   gap: 4rem;
+  z-index: -1; /* behind the photo */
+  user-select: none;
 }
 
 /* each moving track */
@@ -123,6 +134,7 @@ a {
 .track span {
   font-size: clamp(2rem, 8vw, 6rem);
   letter-spacing: 0.02em;
+  opacity: 0.9;
 }
 
 @keyframes slide {
@@ -143,9 +155,21 @@ a {
 
 .bio {
   font-family: "Kulim Park", sans-serif;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.about-header {
+  font-family: "Kumar One", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+.bio-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* two columns */
   align-items: center;
+  gap: 2rem;
 }
 
 .bio-paragraph {

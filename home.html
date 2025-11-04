@@ -19,22 +19,35 @@
     <link rel="stylesheet" href="./CSS/home.css" />
     <link rel="stylesheet" href="./CSS/card.css" />
     <link rel="stylesheet" href="./CSS/lightbulb.css" />
+    <!-- Clarity tag (gtag.js) -->
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "tyxuwkscfp");
-  </script>
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "tyxuwkscfp");
+    </script>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTHX42M18F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MTHX42M18F"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-MTHX42M18F');
-</script>
+      gtag("config", "G-MTHX42M18F");
+    </script>
   </head>
   <body>
     <nav class="header-navbar">
@@ -100,8 +113,13 @@
         </a>
       </div>
     </nav>
-
     <div class="focus-point">
+      <div class="landing-picture">
+        <img
+          src="./img/headShotTranparent.png"
+          alt="picture of Tou Xiong Lor"
+        />
+      </div>
       <div class="name-ticker" aria-label="Tou Xiong Lor marquee">
         <!-- track A -->
         <div class="track">
@@ -125,31 +143,37 @@
 
     <!-- Bio Section -->
     <div class="bio" id="bio">
-      <div class="bio-paragraph">
-        <p>
-          Hi there! I’m Tou, a passionate and adaptable designer with a strong
-          background in UI/UX and Web development. I enjoy creating engaging
-          digital experiences that feel intuitive and meaningful. Whether I’m
-          building responsive websites, crafting wireframes in Figma, or
-          bringing a concept to life through code, I love finding creative ways
-          to solve problems and connect with users. Collaboration and thoughtful
-          design are at the heart of everything I do.
-        </p>
-        <!-- Download Resume Section -->
-        <div class="resume-section" style="text-align: center; margin: 2rem 0">
-          <a
-            href="/Tou_Xiong_Lor_Resume_2025-compressed.pdf"
-            download
-            class="resume-download-btn"
-            >Download My Resume (PDF)</a
+      <h1 class="about-header">About Me</h1>
+      <div class="bio-container">
+        <div class="bio-paragraph">
+          <p>
+            Hi there! I’m Tou, a passionate and adaptable designer with a strong
+            background in UI/UX and Web development. I enjoy creating engaging
+            digital experiences that feel intuitive and meaningful. Whether I’m
+            building responsive websites, crafting wireframes in Figma, or
+            bringing a concept to life through code, I love finding creative
+            ways to solve problems and connect with users. Collaboration and
+            thoughtful design are at the heart of everything I do.
+          </p>
+          <!-- Download Resume Section -->
+          <div
+            class="resume-section"
+            style="text-align: center; margin: 2rem 0"
           >
+            <a
+              href="/Tou_Xiong_Lor_Resume_2025-compressed.pdf"
+              download
+              class="resume-download-btn"
+              >Download My Resume (PDF)</a
+            >
+          </div>
         </div>
-      </div>
-      <div class="picture-me">
-        <img
-          src="./img/headShotTranparent.png"
-          alt="picture of Tou Xiong Lor"
-        />
+        <div class="picture-me">
+          <img
+            src="./img/headShotTranparent.png"
+            alt="picture of Tou Xiong Lor"
+          />
+        </div>
       </div>
     </div>
 
@@ -287,5 +311,3 @@
     </script>
   </body>
 </html>
-
-
