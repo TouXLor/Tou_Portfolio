@@ -96,3 +96,22 @@ input[type="checkbox"]:checked + .display label .circle .moon {
 label:active .circle {
   width: 28px;
 }
+
+/* Drawer theme overrides: ensure the project drawer follows the light/dark toggle */
+body.light-mode .project-drawer .pd-panel {
+  background: #f4f4f4;
+  color: #111;
+}
+body.light-mode .project-drawer .pd-type {
+  color: #65707a;
+}
+body.light-mode .project-drawer .pd-org {
+  color: #333;
+}
+body.light-mode .project-drawer .pd-body {
+  color: #222;
+}
+body.light-mode .project-drawer .pd-links a {
+  background: rgba(0, 0, 0, 0.04);
+  color: #0b66d0;
+}
