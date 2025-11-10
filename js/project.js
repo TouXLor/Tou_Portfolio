@@ -62,17 +62,63 @@
   const drawer = document.getElementById("project-drawer");
   const pdContent = drawer ? drawer.querySelector(".pd-content") : null;
   let _lastTrigger = null;
+  const _drawerDetailCache = { project: null, experience: null };
+
+  async function loadDrawerData(kind) {
+    const key = kind === "experience" ? "experience" : "project";
+    if (_drawerDetailCache[key]) return _drawerDetailCache[key];
+    try {
+      const resp = await fetch(`./data/${key}_drawer_content.json`);
+      if (!resp.ok) throw new Error("Failed loading drawer data");
+      const json = await resp.json();
+      _drawerDetailCache[key] = Array.isArray(json) ? json : [];
+      return _drawerDetailCache[key];
+    } catch (err) {
+      console.warn("Could not load drawer content for", kind, err);
+      _drawerDetailCache[key] = [];
+      return _drawerDetailCache[key];
+    }
+  }
+
+  function findDrawerEntry(kind, base) {
+    const key = kind === "experience" ? "experience" : "project";
+    const list = _drawerDetailCache[key] || [];
+    if (!base) return null;
+    // prefer slug match, then title match
+    const slug = (
+      base.slug ||
+      (base.title || "")
+        .toString()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+    ).toString();
+    let found = list.find((x) => x.slug && x.slug === slug);
+    if (found) return found;
+    found = list.find(
+      (x) =>
+        x.title &&
+        x.title.toString().trim() === (base.title || "").toString().trim()
+    );
+    return found || null;
+  }
 
   function buildContent(project) {
     if (!project) return `<p>Details not available.</p>`;
     const title = project.title || project.name || "Untitled";
     const type = project.type || "";
+    const organization = project.organization || project.company || "";
     const long =
       project.longSummary || project.description || project.summary || "";
+    const dates = project.dates || project.period || "";
     const tools = Array.isArray(project.tools)
       ? project.tools
       : project.tools
       ? [project.tools]
+      : [];
+    const responsibilities = Array.isArray(project.responsibilities)
+      ? project.responsibilities
+      : project.responsibilities
+      ? [project.responsibilities]
       : [];
     const images = Array.isArray(project.gallery)
       ? project.gallery
@@ -86,9 +132,18 @@
       <header>
         <small class="pd-type">${type}</small>
         <h2>${title}</h2>
+        ${organization ? `<h3 class="pd-org">${organization}</h3>` : ""}
       </header>
       <section class="pd-body">
         <p>${long}</p>
+        ${
+          responsibilities.length
+            ? `<div class="pd-resp"><h4>Responsibilities</h4><ul>${responsibilities
+                .map((r) => `<li>${r}</li>`)
+                .join("")}</ul></div>`
+            : ""
+        }
+        ${dates ? `<div class="pd-dates">${dates}</div>` : ""}
         ${
           tools.length
             ? `<p><strong>Tools:</strong> ${tools.join(", ")}</p>`
@@ -99,7 +154,7 @@
             ? `<div class="pd-gallery">${images
                 .map(
                   (src) =>
-                    `<img src="${src}" onerror="this.onerror=null; this.src='./img/placeholder.png'" />`
+                    `<img src="${src}" loading="lazy" onerror="this.onerror=null; this.src='./img/placeholder.png'" />`
                 )
                 .join("")}</div>`
             : ""
@@ -108,10 +163,20 @@
     `;
   }
 
-  function openDrawer(project, trigger) {
+  async function openDrawer(project, trigger, kind = "project") {
     if (!drawer || !pdContent) return;
     _lastTrigger = trigger || null;
-    pdContent.innerHTML = buildContent(project);
+    // try to fetch richer content for this item if available
+    try {
+      await loadDrawerData(kind);
+      const detail = findDrawerEntry(kind, project);
+      const merged = detail ? Object.assign({}, project, detail) : project;
+      pdContent.innerHTML = buildContent(merged);
+    } catch (err) {
+      // fallback to basic
+      pdContent.innerHTML = buildContent(project);
+    }
+
     drawer.classList.add("open");
     drawer.setAttribute("aria-hidden", "false");
     // focus management
@@ -213,4 +278,21 @@
       }
     });
   });
+  // expose drawer opener so other scripts (experience.js) can reuse it
+  try {
+    window.__openDetailDrawer = function (
+      dataObj,
+      triggerEl,
+      kind = "project"
+    ) {
+      try {
+        // openDrawer is async but we don't need to await here
+        openDrawer(dataObj, triggerEl, kind);
+      } catch (err) {
+        console.error("Error opening detail drawer:", err);
+      }
+    };
+  } catch (e) {
+    /* ignore */
+  }
 })();

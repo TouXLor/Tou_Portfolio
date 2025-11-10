@@ -1,0 +1,30 @@
+[
+  {
+    "title": "CoHabit Mobile Application Design",
+    "slug": "cohabit-mobile-application-design",
+    "longSummary": "CoHabit is a roommate matching and home-management mobile app designed for students. I led user research, wireframing, and high-fidelity prototyping. The project focuses on roommate compatibility, chore assignment, and shared grocery lists.",
+    "tools": ["Figma", "Adobe XD", "Miro"],
+    "gallery": [
+      "./img/projects_thumbnails/cohabit_1.png",
+      "./img/projects_thumbnails/cohabit_2.png",
+      "./img/projects_thumbnails/cohabit_3.png"
+    ],
+    "dates": "Jan 2024 - Apr 2024",
+    "links": [
+      { "label": "Case Study", "url": "#" },
+      { "label": "Prototype", "url": "#" }
+    ]
+  },
+  {
+    "title": "StarFish Redesign",
+    "slug": "starfish-redesign",
+    "longSummary": "A complete UI redesign for StarFish, improving accessibility, navigational flow, and onboarding for student users. I conducted usability testing and implemented an accessible color system.",
+    "tools": ["Figma", "Accessibility Tools"],
+    "gallery": [
+      "./img/projects_thumbnails/starFish_1.png",
+      "./img/projects_thumbnails/starFish_2.png"
+    ],
+    "dates": "May 2024 - Jul 2024",
+    "links": [{ "label": "Live Demo", "url": "#" }]
+  }
+]

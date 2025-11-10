@@ -29,14 +29,14 @@
     return;
   }
 
-  function createCard(experience) {
+  function createCard(experience, idx) {
     if (!experience) return "";
     const imagePath = experience.image || "./img/placeholder.png";
 
     return `
       <article class="card-article" data-category="${
         experience.category || ""
-      }">
+      }" data-index="${idx}">
         <img 
           src="${imagePath}" 
           alt="${experience.title}"
@@ -55,8 +55,28 @@
     `;
   }
 
-  const cards = data.map(createCard).join("");
+  const cards = data.map((exp, i) => createCard(exp, i)).join("");
   grid.innerHTML = cards || "<p>No experiences to display</p>";
+
+  // wire Learn More clicks to the shared drawer (if exposed)
+  grid.addEventListener("click", (e) => {
+    const btn = e.target.closest(".card-button");
+    if (!btn) return;
+    const card = btn.closest(".card-article");
+    if (!card) return;
+    const idx = Number(card.dataset.index);
+    const xp = data[idx];
+    if (!xp) return;
+    // if the global opener exists, use it; otherwise, fallback to a simple modal log
+    if (
+      window.__openDetailDrawer &&
+      typeof window.__openDetailDrawer === "function"
+    ) {
+      window.__openDetailDrawer(xp, btn, "experience");
+    } else {
+      console.log("Open experience detail:", xp);
+    }
+  });
 
   // Add filter functionality (robust: support multi-category values and show/hide via style)
   nav.addEventListener("click", (e) => {

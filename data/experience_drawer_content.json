@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Graphic & Web Design Intern",
+    "organization": "IH Concepts",
+    "slug": "ih-concepts-intern",
+    "longSummary": "Worked on WordPress client sites, creating responsive templates and custom shortcodes to speed up content creation. Improved site load times and accessibility.",
+    "responsibilities": [
+      "Developed responsive WordPress templates",
+      "Implemented custom PHP shortcodes for reusable blocks",
+      "Optimized images and front-end assets for performance",
+      "Wrote documentation and tutorials for client editors"
+    ],
+    "tools": ["WordPress", "PHP", "Sass", "Figma"],
+    "gallery": [
+      "./img/exp_thumbnails/ih_1.png",
+      "./img/exp_thumbnails/ih_2.png"
+    ],
+    "dates": "Jun 2023 - Aug 2023",
+    "links": []
+  },
+  {
+    "title": "Web Design Chair",
+    "organization": "Lambda Phi Epsilon International Fraternity, Inc.",
+    "slug": "lphie-web-design-chair",
+    "longSummary": "Led the redesign of the chapter website to improve recruitment flow and highlight events; coordinated with chapter members to gather content.",
+    "responsibilities": [
+      "Led website redesign",
+      "Coordinated content and assets with chapter members",
+      "Deployed responsive templates and hosted updates"
+    ],
+    "tools": ["HTML", "CSS", "JavaScript"],
+    "gallery": ["./img/exp_thumbnails/aoe_1.png"],
+    "dates": "Sep 2022 - May 2023",
+    "links": []
+  }
+]
