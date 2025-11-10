@@ -1,69 +1,40 @@
-// // JS to watch when each card enters the viewport
-// const cards = document.querySelectorAll(".card-article");
-// const io = new IntersectionObserver(
-//   (entries, observer) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add("pop-up");
-//         observer.unobserve(entry.target); // only pop once
-//       }
-//     });
-//   },
-//   { threshold: 0.1 }
-// ); // fire when 10% of the card is visible
+// Lightweight Light/Dark toggle: keep it separate so it always runs
+// It toggles `body.light-mode` when the checkbox is changed and persists the
+// preference to localStorage so the choice survives page reloads.
+document.addEventListener("DOMContentLoaded", function () {
+  try {
+    const toggle = document.getElementById("toggle");
+    const body = document.body;
 
-// cards.forEach((card) => io.observe(card));
+    // Restore preference if present
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") {
+      body.classList.add("light-mode");
+      if (toggle) toggle.checked = true;
+    } else if (saved === "dark") {
+      body.classList.remove("light-mode");
+      if (toggle) toggle.checked = false;
+    } else if (toggle && toggle.checked) {
+      // If no saved pref, use checkbox initial state
+      body.classList.add("light-mode");
+    }
 
-// document.querySelectorAll(".card-button").forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const card = btn.closest(".card-article");
-
-//     // collapse others
-//     document.querySelectorAll(".card-article").forEach((c) => {
-//       if (c !== card) c.classList.remove("active");
-//     });
-
-//     // toggle this one
-//     card.classList.toggle("active");
-
-//     if (card.classList.contains("active")) {
-//       btn.textContent = "Close";
-//     } else {
-//       btn.textContent = "Read More";
-//     }
-//   });
-// });
-
-// // new bit: collapse on mouse leave
-// document.querySelectorAll(".card-article").forEach((card) => {
-//   card.addEventListener("mouseleave", () => {
-//     card.classList.remove("active");
-
-//     const btn = card.querySelector(".card-button");
-//     if (!btn) return;
-
-//     // 3) if it currently says "Close", reset it
-//     if (btn.textContent.trim() === "Close") {
-//       btn.textContent = "Read More";
-//     }
-//   });
-// });
-
-// // Light/Dark mode toggle logic
-// document.addEventListener("DOMContentLoaded", function () {
-//   var toggle = document.getElementById("toggle");
-//   var body = document.body;
-//   if (toggle) {
-//     toggle.addEventListener("change", function () {
-//       if (toggle.checked) {
-//         body.classList.add("light-mode");
-//       } else {
-//         body.classList.remove("light-mode");
-//       }
-//     });
-//   }
-// });
+    if (toggle) {
+      toggle.addEventListener("change", function () {
+        if (toggle.checked) {
+          body.classList.add("light-mode");
+          localStorage.setItem("theme", "light");
+        } else {
+          body.classList.remove("light-mode");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    }
+  } catch (err) {
+    // non-fatal; ensure script doesn't crash the rest of the file
+    console.error("Error initializing theme toggle:", err);
+  }
+});
 
 (async function () {
   const grid = document.getElementById("experiences-grid");

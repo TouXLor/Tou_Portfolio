@@ -86,9 +86,21 @@
   color: var(--title-color);
   cursor: pointer;
   background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 .card-button:hover {
   text-decoration: underline;
+}
+.card-button:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--title-color);
+  border-radius: 2px;
+}
+.card-button:active {
+  outline: none;
 }
 
 .card-article:hover .card-data {

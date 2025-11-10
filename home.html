@@ -266,6 +266,22 @@
 
     <div id="react-root"></div>
 
+    <!-- Project detail side drawer -->
+    <aside
+      id="project-drawer"
+      class="project-drawer"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      tabindex="-1"
+    >
+      <div class="pd-overlay" data-action="close"></div>
+      <div class="pd-panel" role="document">
+        <button class="pd-close" aria-label="Close project details">×</button>
+        <div class="pd-content"><!-- populated by JS --></div>
+      </div>
+    </aside>
+
     <script src="js/gsap.min.js"></script>
     <script src="js/home.js"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -273,41 +289,5 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="js/project.js" defer></script>
     <script src="js/experience.js" defer=""></script>
-
-    <script type="text/babel">
-      const { useState, useEffect } = React;
-
-      let openModalExternally;
-
-      function MyModal() {
-        const [modal, setModal] = useState(false);
-
-        // Expose the function globally
-        useEffect(() => {
-          openModalExternally = () => setModal(true);
-        }, []);
-
-        const toggleModal = () => setModal(!modal);
-        console.log("Modal state:", modal);
-
-        return (
-          <>
-            {modal && (
-              <div className="modal">
-                <div className="overlay" onClick={toggleModal}></div>
-                <div className="modal-content">
-                  <h2>Hello Modal</h2>
-                  <p>skirtt</p>
-                  <button onClick={toggleModal}>Close</button>
-                </div>
-              </div>
-            )}
-          </>
-        );
-      }
-      // Mount React component
-      const root = ReactDOM.createRoot(document.getElementById("react-root"));
-      root.render(<MyModal />);
-    </script>
   </body>
 </html>
