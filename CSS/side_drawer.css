@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: column;
 }
-.project-drawer .pd-close {
+/* .project-drawer .pd-close {
   position: absolute;
   left: 12px;
   top: 12px;
@@ -51,7 +51,59 @@
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
   border-radius: 6px;
+} */
+.project-drawer .pd-close {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 46px;
+  height: 46px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 4s ease;
 }
+
+/* subtle hover background */
+.project-drawer .pd-close:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* X lines (white by default) */
+.project-drawer .pd-close .leftright,
+.project-drawer .pd-close .rightleft {
+  position: absolute;
+  height: 3px;
+  width: 28px;
+  background-color: #ffffff; /* white lines */
+  border-radius: 2px;
+  transition: all 0.35s ease-in;
+}
+
+.project-drawer .pd-close .leftright {
+  transform: rotate(45deg);
+}
+
+.project-drawer .pd-close .rightleft {
+  transform: rotate(-45deg);
+}
+
+/* hover animation */
+.project-drawer .pd-close:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: rgb(255, 255, 255); /* changes to your accent color */
+}
+
+.project-drawer .pd-close:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: rgb(255, 255, 255);
+}
+
 .project-drawer .pd-content h2 {
   margin-top: 0.25rem;
 }
