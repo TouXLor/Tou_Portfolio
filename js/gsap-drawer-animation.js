@@ -73,6 +73,29 @@
         0
       );
 
+      // Parallax / staggered reveal for interior content
+      try {
+        const contentItems = panel.querySelectorAll(".pd-content > *");
+        if (contentItems && contentItems.length) {
+          // start children slightly offset (they'll move less than the panel for parallax)
+          gsap.set(contentItems, { y: 18, opacity: 0 });
+          // staggered entrance after panel starts moving
+          currentTl.to(
+            contentItems,
+            {
+              y: 0,
+              opacity: 1,
+              stagger: 0.05,
+              duration: 0.42,
+              ease: "power2.out",
+            },
+            0.08
+          );
+        }
+      } catch (e) {
+        // ignore if selection fails
+      }
+
       currentTl.eventCallback("onComplete", function () {
         currentTl = null;
       });
@@ -85,6 +108,24 @@
         defaults: { ease: "power3.in", duration: 0.36 },
       });
 
+      // reverse content stagger first for a nicer parallax exit
+      try {
+        const contentItems = panel.querySelectorAll(".pd-content > *");
+        if (contentItems && contentItems.length) {
+          currentTl.to(
+            contentItems,
+            {
+              y: 18,
+              opacity: 0,
+              stagger: 0.03,
+              duration: 0.22,
+              ease: "power2.in",
+            },
+            0
+          );
+        }
+      } catch (e) {}
+
       currentTl.to(overlay, { autoAlpha: 0, duration: 0.28 }, 0);
       // animate blur back to zero
       try {
@@ -92,16 +133,20 @@
       } catch (e) {}
 
       if (useY) {
-        currentTl.to(panel, { y: "100%", duration: 0.36 }, 0);
+        currentTl.to(panel, { y: "100%", duration: 0.36 }, 0.06);
+        currentTl.to(
+          panel,
+          { boxShadow: "0 0 0 rgba(0,0,0,0)", duration: 0.36 },
+          0.06
+        );
       } else {
-        currentTl.to(panel, { x: "100%", duration: 0.36 }, 0);
+        currentTl.to(panel, { x: "100%", duration: 0.36 }, 0.06);
+        currentTl.to(
+          panel,
+          { boxShadow: "0 0 0 rgba(0,0,0,0)", duration: 0.36 },
+          0.06
+        );
       }
-
-      currentTl.to(
-        panel,
-        { boxShadow: "0 0 0 rgba(0,0,0,0)", duration: 0.36 },
-        0
-      );
 
       currentTl.eventCallback("onComplete", function () {
         // restore pointer-events to CSS-managed closed state
