@@ -133,6 +133,7 @@
         <small class="pd-type">${type}</small>
         <h2>${title}</h2>
         ${organization ? `<h3 class="pd-org">${organization}</h3>` : ""}
+        ${dates ? `<div class="pd-dates">${dates}</div>` : ""}
       </header>
       <section class="pd-body">
         <p>${long}</p>
@@ -143,7 +144,7 @@
                 .join("")}</ul></div>`
             : ""
         }
-        ${dates ? `<div class="pd-dates">${dates}</div>` : ""}
+        
         ${
           tools.length
             ? `<p><strong>Tools:</strong> ${tools.join(", ")}</p>`
