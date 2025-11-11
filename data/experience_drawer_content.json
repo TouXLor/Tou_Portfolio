@@ -32,5 +32,36 @@
     "gallery": ["./img/exp_thumbnails/aoe_1.png"],
     "dates": "Sep 2022 - May 2023",
     "links": []
+  },
+  {
+    "title": "Web Designer",
+    "organization": "Treasure Taste LLC",
+    "slug": "treasure-taste-web-designer",
+    "longSummary": "Designed and implemented a responsive website to showcase products and events, improving online discoverability and simplifying order/booking flows. Focused on clear visual hierarchy and performance optimizations for faster load times on mobile devices.",
+    "responsibilities": [
+      "Designed page layouts and responsive components",
+      "Built accessible HTML/CSS pages and interactive UI with vanilla JavaScript",
+      "Optimized images and assets for performance",
+      "Worked with owners to iterate on content and calls-to-action"
+    ],
+    "tools": ["HTML", "CSS", "JavaScript", "Figma"],
+    "gallery": ["./img/exp_thumbnails/treasureLogo.png"],
+    "dates": "Jan 2022 - Dec 2022",
+    "links": []
+  },
+  {
+    "title": "Graphic Designer",
+    "organization": "Golden Flavors LLC",
+    "slug": "golden-flavors-graphic-designer",
+    "longSummary": "Produced branding and promotional artwork for product launches and events, including packaging mockups, social graphics, and print collateral. Collaborated with the marketing lead to ensure consistent brand language across channels.",
+    "responsibilities": [
+      "Created brand assets and packaging mockups",
+      "Designed promotional materials for events and social media",
+      "Prepared print-ready files and coordinated with vendors"
+    ],
+    "tools": ["Adobe Illustrator", "Photoshop", "InDesign", "Figma"],
+    "gallery": ["./img/exp_thumbnails/gf_coverPhoto.png"],
+    "dates": "May 2021 - Nov 2021",
+    "links": []
   }
 ]

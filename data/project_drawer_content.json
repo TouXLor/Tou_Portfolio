@@ -2,29 +2,88 @@
   {
     "title": "CoHabit Mobile Application Design",
     "slug": "cohabit-mobile-application-design",
-    "longSummary": "CoHabit is a roommate matching and home-management mobile app designed for students. I led user research, wireframing, and high-fidelity prototyping. The project focuses on roommate compatibility, chore assignment, and shared grocery lists.",
-    "tools": ["Figma", "Adobe XD", "Miro"],
-    "gallery": [
-      "./img/projects_thumbnails/cohabit_1.png",
-      "./img/projects_thumbnails/cohabit_2.png",
-      "./img/projects_thumbnails/cohabit_3.png"
+    "longSummary": "CoHabit is a roommate-matching concept focused on helping students find compatible roommates and manage shared living tasks. The project includes user flows for onboarding, roommate matching by interests and habits, chore scheduling, and an in-app messaging experience. Emphasis was placed on accessibility, clear information architecture, and mobile-first interactions.",
+    "responsibilities": [
+      "Conducted user research and persona creation",
+      "Designed wireframes and high-fidelity mobile prototypes",
+      "Built interactive prototypes to validate onboarding and matching flows",
+      "Worked on accessibility checks and iterative usability testing"
     ],
-    "dates": "Jan 2024 - Apr 2024",
-    "links": [
-      { "label": "Case Study", "url": "#" },
-      { "label": "Prototype", "url": "#" }
-    ]
+    "tools": ["Figma", "Sketch", "Adobe XD", "Principle"],
+    "gallery": ["./img/projects_thumbnails/cohabit.png"],
+    "dates": "2023",
+    "links": []
   },
   {
     "title": "StarFish Redesign",
     "slug": "starfish-redesign",
-    "longSummary": "A complete UI redesign for StarFish, improving accessibility, navigational flow, and onboarding for student users. I conducted usability testing and implemented an accessible color system.",
-    "tools": ["Figma", "Accessibility Tools"],
-    "gallery": [
-      "./img/projects_thumbnails/starFish_1.png",
-      "./img/projects_thumbnails/starFish_2.png"
+    "longSummary": "A full visual and interaction redesign for StarFish, a student resource platform. The redesign focused on improving discoverability of services, reducing cognitive load, and enhancing responsiveness across devices. Changes included updated typography, clearer CTAs, and improved navigational patterns to help students access resources faster.",
+    "responsibilities": [
+      "Performed heuristic evaluations and accessibility audits",
+      "Created redesigned UI components and system tokens",
+      "Prototyped key flows and validated with users",
+      "Collaborated with devs to implement accessible markup and responsive styles"
     ],
-    "dates": "May 2024 - Jul 2024",
-    "links": [{ "label": "Live Demo", "url": "#" }]
+    "tools": ["Figma", "HTML", "CSS", "JavaScript"],
+    "gallery": ["./img/projects_thumbnails/starFish.png"],
+    "dates": "2022 - 2023",
+    "links": []
+  },
+  {
+    "title": "DishDive Website",
+    "slug": "dishdive-website",
+    "longSummary": "DishDive is a recipe-sharing website built with plain HTML, CSS and JavaScript. The project focused on a clean, image-forward layout and interactive features for browsing, commenting and rating dishes. It includes responsive grid layouts, filtering, and user-friendly forms for adding recipes.",
+    "responsibilities": [
+      "Designed and implemented responsive layouts",
+      "Built interactive filtering and rating UI with vanilla JavaScript",
+      "Optimized images and lazy-loading for faster page loads",
+      "Implemented accessible forms and keyboard navigation"
+    ],
+    "tools": ["HTML", "CSS", "JavaScript"],
+    "gallery": ["./img/projects_thumbnails/dishDive.png"],
+    "dates": "2021",
+    "links": []
+  },
+  {
+    "title": "LawBandit Home UI Redesign",
+    "slug": "lawbandit-home-ui-redesign",
+    "longSummary": "A UX research-driven case study that examined pain points on a legal education platform. The work produced wireframes, low- and high-fidelity prototypes, and recommended interaction patterns to help learners find content and track progress more effectively.",
+    "responsibilities": [
+      "Conducted user research and mapped user journeys",
+      "Created wireframes and interactive prototypes",
+      "Documented design decisions and accessibility considerations"
+    ],
+    "tools": ["Figma", "Miro"],
+    "gallery": ["./img/projects_thumbnails/LawBandit.png"],
+    "dates": "2022",
+    "links": []
+  },
+  {
+    "title": "Badger Mart",
+    "slug": "badger-mart",
+    "longSummary": "Badger Mart is an AI-assisted campus marketplace concept for students to list, buy and sell items. The project explored search and discovery features, mobile-first checkout flows, and product listing patterns to support quick posting and fair matching between buyers and sellers.",
+    "responsibilities": [
+      "Designed product listing and search interfaces",
+      "Prototype mobile-first posting and checkout flows",
+      "Iterated on pattern library elements for consistency"
+    ],
+    "tools": ["Figma", "HTML", "CSS", "JavaScript"],
+    "gallery": ["./img/projects_thumbnails/bucky.png"],
+    "dates": "2021 - 2022",
+    "links": []
+  },
+  {
+    "title": "LPHIE Madison Chapter Website Redesign",
+    "slug": "lphie-madison-chapter-website-redesign",
+    "longSummary": "A full website rebuild for the Lambda Phi Epsilon Madison chapter to modernize the look, improve responsiveness, and better promote events and recruitment. The site includes responsive templates, event listings, and contact forms tailored to the chapter's needs.",
+    "responsibilities": [
+      "Built responsive templates and event pages",
+      "Improved content structure for recruitment and alumni engagement",
+      "Worked with chapter stakeholders to iterate on content and visuals"
+    ],
+    "tools": ["HTML", "CSS", "JavaScript", "WordPress"],
+    "gallery": ["./img/exp_thumbnails/aoe.png"],
+    "dates": "2020 - 2021",
+    "links": []
   }
 ]
