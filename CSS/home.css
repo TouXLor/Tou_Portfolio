@@ -35,6 +35,9 @@ body.light-mode .project-nav button,
 body.light-mode .experience-nav button {
   color: #222 !important;
 }
+body.light-mode .bio .resume-cta .label {
+  color: #ffffff;
+}
 body.light-mode .card-container .loading,
 body.light-mode .card-container .error {
   color: #444;
@@ -203,7 +206,7 @@ a {
   border-spacing: 1rem 0.5rem;
   border-color: white;
   margin-top: 3em;
-  margin-bottom: 7em;
+  margin-bottom: 10.5rem;
 }
 
 .skill-header {
@@ -212,51 +215,59 @@ a {
   font-size: 2.5rem;
   text-align: center;
 }
+
 .skill-table th,
 .skill-table td {
-  padding: 1rem 2rem; /* Adjust as needed for vertical and horizontal space */
+  padding: 1rem 2rem; /* vertical + horizontal space */
 }
 
 .skill-table th {
-  position: relative; /* establish a local positioning context */
-  height: 10rem; /* give your cell a consistent height */
+  position: relative;
+  height: 10rem;
   width: 8rem;
-  padding: 1rem 2rem; /* your existing padding */
-  text-align: center; /* center the contents horizontally */
+  padding: 1rem 2rem;
+  text-align: center;
 }
-.skill-table th img {
+
+/* Updated for new .skill-item structure */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* keeps label toward bottom */
+  height: 100%;
+  position: relative;
+}
+
+.skill-item img {
   display: block;
-  margin: 0 auto; /* keep your icon centered */
-  max-height: 4rem; /* optional, to make sure it doesn’t get too big */
+  margin: 0 auto;
+  max-height: 4rem;
 }
-.skill-table th p {
-  position: absolute; /* pull it out of normal flow */
-  bottom: 0; /* distance from the bottom of the cell */
-  left: 50%; /* start in the middle... */
-  transform: translateX(-50%); /* ...and center it exactly */
-  margin: 0; /* reset any default margins */
-  font-size: 1.5em; /* your sizing */
-}
-.skill-table p {
+
+.skill-item h3 {
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
   font-family: "Kulim Park", sans-serif;
   font-size: 1.5em;
-  margin-top: auto;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
 /* Medium screens (e.g. portrait tablets, small laptops) */
 @media (max-width: 900px) {
   .skill-table {
-    /* make the table take full width */
     width: 100%;
   }
   .skill-table tr {
-    /* switch from a row to a wrapping flex layout */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   .skill-table th {
-    /* two skills per row */
     flex: 1 1 calc(50% - 1rem);
     margin: 0.5rem;
     box-sizing: border-box;
@@ -266,16 +277,14 @@ a {
 /* Small screens (phones) */
 @media (max-width: 600px) {
   .skill-table th {
-    /* one skill per row */
     flex: 1 1 100%;
     margin: 0.25rem 0;
   }
-  .skill-table th img {
-    /* shrink the icons a bit */
+  .skill-item img {
     max-width: 60px;
     height: auto;
   }
-  .skill-table th p {
+  .skill-item h3 {
     font-size: 1.2rem;
   }
 }
@@ -306,10 +315,13 @@ a {
 .education-date {
   font-family: "Kulim Park", sans-serif;
   font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
-.education-date {
+.education .education-date {
   margin-bottom: 10rem;
+  color: white;
+  font-weight: normal;
 }
 .card.is-hidden {
   display: none; /* simplest to start */
@@ -463,3 +475,107 @@ a {
 }
 
 /* <------------ End of CSS/home.css --> */
+
+/* Base reset for the button */
+.resume-download-btn {
+  --cta-bg: #333;
+  --cta-pop: #b0b0b0;
+
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  font-size: clamp(10px, 2vw + 8px, 15px);
+  line-height: 1;
+  color: #fff;
+  background: var(--cta-bg);
+  box-shadow: 6px 6px 0 #515050;
+  transform: skewX(-15deg);
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+  border-radius: 4px; /* optional */
+}
+
+/* keyboard focus */
+.resume-download-btn:focus-visible {
+  outline: 3px solid var(--cta-pop);
+  outline-offset: 4px;
+}
+
+/* hover depth */
+.resume-download-btn:hover {
+  box-shadow: 10px 10px 0 var(--cta-pop);
+}
+
+/* inner spans un-skewed so text/svg look normal */
+.resume-download-btn > span {
+  transform: skewX(15deg);
+}
+F
+/* label & arrow layout */
+.resume-download-btn .label {
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+
+.resume-download-btn .arrow {
+  width: 24px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+  display: inline-flex;
+  transition: margin-right 0.5s ease;
+}
+
+/* “slide right” feel on hover */
+.resume-download-btn:hover .arrow {
+  margin-right: 45px;
+}
+
+/* SVG path animations */
+.resume-download-btn path.one {
+  transition: transform 0.4s ease;
+  transform: translateX(-60%);
+}
+.resume-download-btn path.two {
+  transition: transform 0.5s ease;
+  transform: translateX(-30%);
+}
+.resume-download-btn:hover path.one,
+.resume-download-btn:hover path.two {
+  transform: translateX(0%);
+}
+.resume-download-btn:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+.resume-download-btn:hover path.two {
+  animation: color_anim 1s infinite 0.4s;
+}
+.resume-download-btn:hover path.one {
+  animation: color_anim 1s infinite 0.6s;
+}
+
+/* color pulsing */
+@keyframes color_anim {
+  0% {
+    fill: #fff;
+  }
+  50% {
+    fill: var(--cta-pop);
+  }
+  100% {
+    fill: #fff;
+  }
+}
+
+/* motion safety */
+@media (prefers-reduced-motion: reduce) {
+  .resume-download-btn,
+  .resume-download-btn * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
