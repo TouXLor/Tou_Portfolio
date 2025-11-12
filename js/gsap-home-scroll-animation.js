@@ -260,3 +260,98 @@
 //   if (projectsGrid) animateNewCards(projectsGrid);
 //   if (experiencesGrid) animateNewCards(experiencesGrid);
 // })();
+
+// // Register plugin
+// gsap.registerPlugin(ScrollTrigger);
+
+// // Respect reduced-motion
+// const prefersReduced = window.matchMedia?.(
+//   "(prefers-reduced-motion: reduce)"
+// )?.matches;
+
+// // ---------- FOOTER TAKEOVER (pin + scrub) ----------
+// (function footerTakeover() {
+//   if (prefersReduced) {
+//     // No animation if user prefers reduced motion
+//     gsap.set(".site-footer .footer-container", { opacity: 1, y: 0, scale: 1 });
+//     return;
+//   }
+
+//   // initial state
+//   gsap.set(".site-footer .footer-container", {
+//     opacity: 0,
+//     y: 24,
+//     scale: 0.96,
+//   });
+
+//   const tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".site-footer",
+//       start: "top bottom", // when footer touches viewport
+//       end: "+=120%", // length of the takeover
+//       scrub: 1, // smoothing
+//       pin: true, // lock footer in place during takeover
+//       anticipatePin: 1,
+//     },
+//   });
+
+//   tl.fromTo(
+//     ".site-footer",
+//     { height: "40vh", borderTopLeftRadius: 14, borderTopRightRadius: 14 },
+//     {
+//       height: "100vh",
+//       borderTopLeftRadius: 0,
+//       borderTopRightRadius: 0,
+//       ease: "power2.out",
+//     }
+//   ).to(
+//     ".site-footer .footer-container",
+//     { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power2.out" },
+//     0.15 // start just after the grow begins
+//   );
+// })();
+
+// // ---------- LETTER–BY–LETTER REVEAL ----------
+// (function splitAndReveal() {
+//   const el = document.querySelector(".big-name");
+//   if (!el) return;
+
+//   // Prevent double-splitting on hot reload
+//   if (!el.dataset.split) {
+//     const text = el.textContent;
+//     el.setAttribute("aria-label", text.trim());
+//     el.textContent = "";
+//     const frag = document.createDocumentFragment();
+
+//     for (const ch of text) {
+//       const s = document.createElement("span");
+//       s.className = "char";
+//       s.textContent = ch === " " ? "\u00A0" : ch; // preserve spaces
+//       frag.appendChild(s);
+//     }
+//     el.appendChild(frag);
+//     el.dataset.split = "true";
+//   }
+
+//   if (prefersReduced) {
+//     gsap.set(".big-name .char", { yPercent: 0, opacity: 1, rotate: 0 });
+//     return;
+//   }
+
+//   gsap.fromTo(
+//     ".big-name .char",
+//     { yPercent: 120, opacity: 0, rotate: 6 },
+//     {
+//       yPercent: 0,
+//       opacity: 1,
+//       rotate: 0,
+//       ease: "power4.out",
+//       stagger: { each: 0.055, from: "start" }, // tweak speed here
+//       scrollTrigger: {
+//         trigger: ".big-name",
+//         start: "top 80%", // play as your name enters
+//         once: true,
+//       },
+//     }
+//   );
+// })();

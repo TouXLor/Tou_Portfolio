@@ -30,9 +30,14 @@ body.light-mode .education-header,
 body.light-mode .project-header,
 body.light-mode .experiences-header,
 body.light-mode .skill-header,
+body.light-mode .skill-item h3,
 body.light-mode .education-title,
+body.light-mode .education-date,
 body.light-mode .project-nav button,
-body.light-mode .experience-nav button {
+body.light-mode .experience-nav button,
+body.light-mode .footer-card,
+body.light-mode .corner-left-top,
+body.light-mode .corner-right-top {
   color: #222 !important;
 }
 body.light-mode .bio .resume-cta .label {
@@ -68,6 +73,7 @@ a {
   display: flex;
   align-items: center;
   z-index: 2;
+  text-transform: uppercase;
 }
 
 .header-navbar > div {
@@ -124,6 +130,7 @@ a {
   gap: 4rem;
   z-index: -1; /* behind the photo */
   user-select: none;
+  text-transform: uppercase;
 }
 
 /* each moving track */
@@ -169,6 +176,7 @@ a {
   font-family: "Kumar One", cursive;
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  text-transform: uppercase;
 }
 .bio-container {
   display: grid;
@@ -214,6 +222,7 @@ a {
   color: white;
   font-size: 2.5rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .skill-table th,
@@ -302,6 +311,7 @@ a {
   color: white;
   font-size: 2.5rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .education-title {
@@ -338,6 +348,7 @@ a {
   color: #fff;
   letter-spacing: 0.05em;
   margin-top: 5rem;
+  text-transform: uppercase;
 }
 
 .experience-nav {
@@ -387,6 +398,7 @@ a {
   color: #fff;
   letter-spacing: 0.05em;
   margin-top: 5rem;
+  text-transform: uppercase;
 }
 
 .project-nav {
@@ -577,5 +589,174 @@ F
     transition: none !important;
     animation: none !important;
     transform: none !important;
+  }
+}
+
+/* ===== Footer design tokens ===== */
+:root {
+  --footer-bg: #1b2029; /* dark slate */
+  --footer-fg: #e9edf3; /* light text */
+  --muted: #b7beca;
+  --accent: #fbc638;
+  --card-radius: 14px;
+  --pad: 28px;
+  --maxw: 1200px;
+}
+
+/* ===== Footer card layout ===== */
+.footer-card {
+  background: transparent;
+  color: var(--footer-fg);
+  padding: var(--pad) var(--pad) calc(var(--pad) * 1.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* top grid */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) max-content;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.footer-col h4 {
+  font: 600 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col li {
+  margin: 6px 0;
+}
+
+.footer-col a {
+  color: var(--footer-fg);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+}
+
+/* CTA top-right */
+.footer-cta {
+  place-self: start end;
+  align-self: start;
+  font: 500 12px/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--footer-fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--footer-fg);
+  padding-bottom: 4px;
+}
+
+/* ===== Name + corner labels ===== */
+.name-wrap {
+  position: relative;
+  width: fit-content; /* shrink to width of the big name */
+  margin: 0 auto; /* center horizontally */
+}
+
+/* corner labels container */
+.footer-corners {
+  position: absolute;
+  top: -18px; /* adjust depending on visual spacing */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between; /* pushes left + right spans to edges of the name width */
+  pointer-events: none; /* optional */
+}
+
+/* corner micro label text */
+.corner-left-top,
+.corner-right-top {
+  font: 500 10px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap; /* prevents wrapping */
+}
+
+/* BIG NAME */
+.big-name {
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin: 10px 0 8px;
+  font-size: clamp(56px, 16vw, 200px);
+  white-space: nowrap;
+}
+
+.big-name .char {
+  display: inline-block;
+  transform: translateY(120%);
+}
+
+/* ===== Bottom strip ===== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between; /* stays within name width now */
+  align-items: center;
+  font: 500 10px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 12px; /* adjust if needed */
+}
+
+.footer-bottom a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-bottom a:hover {
+  color: var(--footer-fg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .footer-cta {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: 8px;
+  }
+
+  .big-name {
+    font-size: clamp(48px, 18vw, 180px);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .corner-right-top {
+    display: none;
+  }
+
+  .big-name {
+    font-size: clamp(42px, 20vw, 140px);
   }
 }
