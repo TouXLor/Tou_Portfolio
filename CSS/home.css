@@ -66,13 +66,14 @@ a {
 
 .header-navbar {
   font-family: "Kumar One", cursive;
+  /* font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; */
   position: fixed;
   top: 0;
   width: 100%;
   padding: 1em;
   display: flex;
   align-items: center;
-  z-index: 2;
+  z-index: 5;
   text-transform: uppercase;
 }
 
@@ -108,11 +109,16 @@ a {
   justify-content: center;
   overflow: hidden;
   color: #fff;
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
+.landing-wrap {
+  position: relative;
+}
+
 .landing-picture {
   position: relative;
-  z-index: 1; /* on top */
+  z-index: 3; /* on top */
   pointer-events: none;
 }
 .landing-picture img {
@@ -166,14 +172,16 @@ a {
 }
 
 .bio {
-  font-family: "Kulim Park", sans-serif;
+  /* font-family: "Kulim Park", sans-serif; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: white;
   text-align: center;
   padding: 4rem 2rem;
 }
 
 .about-header {
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   text-transform: uppercase;
@@ -218,7 +226,8 @@ a {
 }
 
 .skill-header {
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: white;
   font-size: 2.5rem;
   text-align: center;
@@ -260,7 +269,8 @@ a {
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  font-family: "Kulim Park", sans-serif;
+  /* font-family: "Kulim Park", sans-serif; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 1.5em;
   color: white;
   letter-spacing: 0.5px;
@@ -307,7 +317,8 @@ a {
 }
 
 .education-header {
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: white;
   font-size: 2.5rem;
   text-align: center;
@@ -315,7 +326,8 @@ a {
 }
 
 .education-title {
-  font-family: "Kulim Park", sans-serif;
+  /* font-family: "Kulim Park", sans-serif; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   margin-top: 10rem;
   font-size: 1.7rem;
   color: white;
@@ -323,7 +335,8 @@ a {
 
 .education-degree,
 .education-date {
-  font-family: "Kulim Park", sans-serif;
+  /* font-family: "Kulim Park", sans-serif; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 1.5rem;
   margin-top: 1rem;
 }
@@ -342,7 +355,8 @@ a {
   margin-bottom: 10rem;
 }
 .experiences-header {
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 2.5rem;
   text-align: center;
   color: #fff;
@@ -354,7 +368,8 @@ a {
 .experience-nav {
   display: flex;
   justify-content: center;
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 1.5rem;
   list-style: none;
   margin: 1.5rem 0px;
@@ -392,7 +407,8 @@ a {
 }
 
 .project-header {
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 2.5rem;
   text-align: center;
   color: #fff;
@@ -404,7 +420,8 @@ a {
 .project-nav {
   display: flex;
   justify-content: center;
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 1.5rem;
   list-style: none;
   margin: 1.5rem 0px;
@@ -450,7 +467,8 @@ a {
   text-align: center;
   padding: 2rem 1rem;
   color: #ddd;
-  font-family: "Kulim Park", sans-serif;
+  /* font-family: "Kulim Park", sans-serif; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 1.2rem;
 }
 .card-container .error {
@@ -464,7 +482,8 @@ a {
   display: inline-block;
   padding: 0.8em 2em;
   font-size: 1rem;
-  font-family: "Kumar One", cursive;
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: #ffffff;
   border-radius: 8px;
   text-decoration: none;
@@ -485,7 +504,6 @@ a {
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
-
 /* <------------ End of CSS/home.css --> */
 
 /* Base reset for the button */

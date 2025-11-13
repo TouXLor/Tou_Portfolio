@@ -1,3 +1,4 @@
+/* Layout containers */
 .container {
   display: grid;
   place-items: center;
@@ -9,36 +10,55 @@
   row-gap: 1.5rem;
 }
 
+/* Card base + states */
 .card-article {
   position: relative;
   overflow: hidden;
   transform: translateY(20px);
-  transition: opacity 500ms ease, transform 500ms ease;
   transform-origin: center center;
   border-radius: 1rem;
   margin-bottom: 2rem;
   z-index: 1;
+  will-change: opacity, transform;
+  opacity: 1;
+  transition: opacity 500ms ease, transform 500ms ease;
 }
+
 .card-article.pop-up {
   transform: translateY(0);
   opacity: 1;
 }
+
 .card-article:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   animation: remove-overflow 2s forwards;
 }
-.card-article:hover .card-img {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
+
+.card-article.is-hidden {
+  opacity: 0;
+  transform: translateY(8px) scale(0.995);
+  pointer-events: none;
 }
+
+.card-article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+/* Card image */
 .card-img {
-  width: auto; /* up from 328px */ /* so it never overflows its container */
+  width: auto; /* so it never overflows its container */
   height: auto; /* keep the aspect ratio */
   border-radius: 1.4rem;
   object-fit: cover;
 }
 
+.card-article:hover .card-img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Card content panel */
 .card-data {
   font-family: "Kulim Park", sans-serif;
   width: 80%;
@@ -59,6 +79,22 @@
   box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.card-article:hover .card-data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.card-article:not(:hover) .card-data {
+  animation: remove-data 1s forwards;
+}
+
+.card-article.active .card-data {
+  transform: translate(0) scale() !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Card text */
 .card-description {
   display: block;
   font-size: var(--small-font-size);
@@ -72,6 +108,8 @@
   color: var(--title-color);
   margin-bottom: 0.75rem;
 }
+
+/* Button reset + styles */
 .card-button,
 .card-button *,
 .card-button :after,
@@ -81,6 +119,7 @@
   border: 0 solid;
   box-sizing: border-box;
 }
+
 .card-button {
   font-size: 12px;
   color: var(--title-color);
@@ -91,53 +130,58 @@
   padding: 0;
   margin: 0;
 }
+
 .card-button:hover {
   text-decoration: underline;
 }
+
 .card-button:focus {
   outline: none;
   box-shadow: inset 0 0 0 2px var(--title-color);
   border-radius: 2px;
 }
+
 .card-button:active {
   outline: none;
 }
 
-.card-article:hover .card-data {
-  animation: show-data 1s forwards;
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
-.card-article.active .card-data {
-  transform: translate(0) scale() !important;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25) !important;
-}
-
+/* Extra expandable content */
 .card-extra {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
   padding: 0 1.5rem;
 }
+
 .card-extra p {
   color: black;
   font-size: 12px;
 }
+
 .card-article.active .card-extra {
   max-height: 100%;
   max-width: 100%;
   padding: 1rem 1.5rem;
 }
 
-.card-article:not(:hover) {
-  animation: show-overflow 2s forwards;
+/* Loading / error UI for grids */
+.card-container .loading,
+.card-container .error {
+  grid-column: 1 / -1; /* span full width of grid */
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #ddd;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 1.2rem;
 }
 
-.card-article:not(:hover) .card-data {
-  animation: remove-data 1s forwards;
+.card-container .error {
+  color: #ffdddd;
+  background: rgba(255, 0, 0, 0.03);
+  border-radius: 8px;
 }
 
+/* Animations */
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -175,6 +219,8 @@
   }
 }
 
+/* Responsive tweaks */
+
 /* For all size */
 @media (max-width: 900px) {
   .links,
@@ -201,6 +247,7 @@
     padding: 1rem;
   }
 }
+
 /* Medium Devices */
 @media screen and (min-width: 768px) {
   .card-container {
@@ -210,7 +257,6 @@
 }
 
 /* Large Devices */
-
 @media screen and (min-width: 1120px) {
   .container {
     height: auto;
