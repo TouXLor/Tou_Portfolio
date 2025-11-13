@@ -50,7 +50,10 @@ body.light-mode .project-nav button,
 body.light-mode .experience-nav button,
 body.light-mode .footer-card,
 body.light-mode .corner-left-top,
-body.light-mode .corner-right-top {
+body.light-mode .corner-right-top,
+body.light-mode .name-track-wrap .name-ticker,
+body.light-mode .name-track-wrap .name-ticker-2,
+body.light-mode .name-track-wrap .name-ticker-3 {
   color: #222 !important;
 }
 
@@ -156,7 +159,7 @@ a {
   flex-direction: column;
   justify-content: center; /* middle row centered vertically */
   align-items: stretch;
-  gap: clamp(0.5rem, 1vh, 0.5rem); /* responsive vertical spacing */
+  gap: clamp(0.5rem, 3vh, 2rem); /* responsive vertical spacing */
   z-index: -1;
   pointer-events: none;
 }
@@ -203,12 +206,12 @@ a {
   animation: slide var(--speed) linear infinite;
 }
 
-.track span {
-  font-size: clamp(2rem, 8vw, 6rem);
+.track span,
+.track2 span {
+  font-size: clamp(1.5rem, 5vw, 4rem);
   letter-spacing: 0.02em;
   opacity: 0.9;
 }
-
 /* ================================
    Tracks: right-moving (track2)
    ================================ */
@@ -218,12 +221,6 @@ a {
   flex-shrink: 0; /* do not compress */
   min-width: 100%; /* at least viewport width */
   animation: slide-right var(--speed) linear infinite;
-}
-
-.track2 span {
-  font-size: clamp(2rem, 8vw, 6rem);
-  letter-spacing: 0.02em;
-  opacity: 0.9;
 }
 
 .track,
@@ -258,6 +255,13 @@ a {
   .track,
   .track2 {
     animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .track span,
+  .track2 span {
+    font-size: clamp(1.2rem, 6vw, 2.6rem);
   }
 }
 
