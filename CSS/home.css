@@ -1,14 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ========== Global Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ========== Root Tokens ========== */
+:root {
+  --gap: 3rem; /* space between names */
+  --speed: clamp(60s, 90s, 120s); /* lower = faster */
+
+  /* Footer tokens */
+  --footer-bg: #1b2029; /* dark slate */
+  --footer-fg: #e9edf3; /* light text */
+  --muted: #b7beca;
+  --accent: #fbc638;
+  --card-radius: 14px;
+  --pad: 28px;
+  --maxw: 1200px;
+}
+
+/* ========== Body / Theme ========== */
 body {
   background-color: rgb(17, 17, 17);
   min-height: 100vh;
@@ -20,6 +32,7 @@ body.light-mode {
   background: #e4e4e4;
   color: #222;
 }
+
 body.light-mode p,
 body.light-mode a,
 body.light-mode .focus-point,
@@ -40,17 +53,22 @@ body.light-mode .corner-left-top,
 body.light-mode .corner-right-top {
   color: #222 !important;
 }
+
 body.light-mode .bio .resume-cta .label {
   color: #ffffff;
 }
+
 body.light-mode .card-container .loading,
 body.light-mode .card-container .error {
   color: #444;
 }
+
 body.light-mode .card-container .error {
   color: #b00;
   background: rgba(255, 0, 0, 0.07);
 }
+
+/* ========== Base Elements ========== */
 img {
   width: 100%;
   height: 100%;
@@ -64,6 +82,7 @@ a {
   font-size: 1.8rem;
 }
 
+/* ========== Header / Navbar ========== */
 .header-navbar {
   font-family: "Kumar One", cursive;
   /* font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; */
@@ -80,9 +99,11 @@ a {
 .header-navbar > div {
   flex: 1;
 }
+
 .logo {
   padding-left: 20px;
 }
+
 .links {
   display: flex;
   justify-content: flex-start;
@@ -96,10 +117,7 @@ a {
   align-items: center;
 }
 
-:root {
-  --gap: 3rem; /* space between names */
-  --speed: 30s; /* lower = faster */
-}
+/* ========== Hero / Focus Section ========== */
 .focus-point {
   position: relative;
   height: 100vh;
@@ -112,6 +130,7 @@ a {
   /* font-family: "Kumar One", cursive; */
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
+
 .landing-wrap {
   position: relative;
 }
@@ -121,25 +140,61 @@ a {
   z-index: 3; /* on top */
   pointer-events: none;
 }
+
 .landing-picture img {
   max-height: 90vh; /* scale as you like */
   height: auto;
 }
-/* outer strip */
-.name-ticker {
-  position: absolute; /* stretch behind the photo */
-  inset: 0; /* top/right/bottom/left: 0 */
+
+/* ================================
+   Wrapper: holds all three rows
+   ================================ */
+.name-track-wrap {
+  position: absolute;
+  inset: 0;
   display: flex;
-  align-items: center; /* center the tracks vertically */
+  flex-direction: column;
+  justify-content: center; /* middle row centered vertically */
+  align-items: stretch;
+  gap: clamp(0.5rem, 1vh, 0.5rem); /* responsive vertical spacing */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ================================
+   Row base styles (all tickers)
+   ================================ */
+.name-ticker,
+.name-ticker-2,
+.name-ticker-3 {
+  position: relative;
+  display: flex;
   overflow: hidden;
   white-space: nowrap;
   gap: 4rem;
-  z-index: -1; /* behind the photo */
-  user-select: none;
   text-transform: uppercase;
+  user-select: none;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-/* each moving track */
+/* If you still want the middle row vertically centered within its row */
+.name-ticker {
+  align-items: center;
+}
+
+/* Optional hierarchy: top + bottom rows dimmed */
+.name-ticker-2 span,
+.name-ticker-3 span {
+  opacity: 0.25; /* background rows */
+}
+
+.name-ticker span {
+  opacity: 1; /* main middle row */
+}
+
+/* ================================
+   Tracks: left-moving (track)
+   ================================ */
 .track {
   display: inline-flex;
   gap: var(--gap);
@@ -148,29 +203,65 @@ a {
   animation: slide var(--speed) linear infinite;
 }
 
-/* text */
 .track span {
   font-size: clamp(2rem, 8vw, 6rem);
   letter-spacing: 0.02em;
   opacity: 0.9;
 }
 
+/* ================================
+   Tracks: right-moving (track2)
+   ================================ */
+.track2 {
+  display: inline-flex;
+  gap: var(--gap);
+  flex-shrink: 0; /* do not compress */
+  min-width: 100%; /* at least viewport width */
+  animation: slide-right var(--speed) linear infinite;
+}
+
+.track2 span {
+  font-size: clamp(2rem, 8vw, 6rem);
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+.track,
+.track2 {
+  will-change: transform;
+}
+
+/* ================================
+   Keyframes
+   ================================ */
 @keyframes slide {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
-  } /* exactly one track width */
+    transform: translateX(-100.01%);
+  }
 }
 
-/* motion-safe */
+@keyframes slide-right {
+  from {
+    transform: translateX(-100.01%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* ================================
+   Motion safety
+   ================================ */
 @media (prefers-reduced-motion: reduce) {
-  .track {
+  .track,
+  .track2 {
     animation: none;
   }
 }
 
+/* ========== Bio Section ========== */
 .bio {
   /* font-family: "Kulim Park", sans-serif; */
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -186,6 +277,7 @@ a {
   margin-bottom: 3rem;
   text-transform: uppercase;
 }
+
 .bio-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* two columns */
@@ -215,6 +307,7 @@ a {
   padding-bottom: 10rem;
 }
 
+/* ========== Skill Section ========== */
 .skill-table {
   color: rgb(255, 255, 255);
   border-collapse: collapse;
@@ -281,11 +374,13 @@ a {
   .skill-table {
     width: 100%;
   }
+
   .skill-table tr {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .skill-table th {
     flex: 1 1 calc(50% - 1rem);
     margin: 0.5rem;
@@ -299,15 +394,18 @@ a {
     flex: 1 1 100%;
     margin: 0.25rem 0;
   }
+
   .skill-item img {
     max-width: 60px;
     height: auto;
   }
+
   .skill-item h3 {
     font-size: 1.2rem;
   }
 }
 
+/* ========== Education Section ========== */
 .education {
   display: grid;
   grid-template-columns: 1fr;
@@ -346,14 +444,17 @@ a {
   color: white;
   font-weight: normal;
 }
+
+/* Legacy card hide */
 .card.is-hidden {
   display: none; /* simplest to start */
 }
-/* optional polish later: use opacity/scale transitions instead of display:none */
 
+/* ========== Experience Section ========== */
 .experience-section {
   margin-bottom: 10rem;
 }
+
 .experiences-header {
   /* font-family: "Kumar One", cursive; */
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -396,6 +497,7 @@ a {
   outline: none;
 }
 
+/* ========== Project Section / Grid ========== */
 .projects-grid {
   display: grid;
   gap: 1.5rem;
@@ -448,12 +550,14 @@ a {
   outline: none;
 }
 
+/* ========== Card Grid / Loading States ========== */
 /* Fade animation for cards when filtering */
 .card-article {
   will-change: opacity, transform;
   opacity: 1;
   transition: opacity 500ms ease, transform 500ms ease;
 }
+
 .card-article.is-hidden {
   opacity: 0;
   transform: translateY(8px) scale(0.995);
@@ -471,31 +575,11 @@ a {
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 1.2rem;
 }
+
 .card-container .error {
   color: #ffdddd;
   background: rgba(255, 0, 0, 0.03);
   border-radius: 8px;
-}
-
-/* Download Resume Button */
-.resume-download-btn {
-  display: inline-block;
-  padding: 0.8em 2em;
-  font-size: 1rem;
-  /* font-family: "Kumar One", cursive; */
-  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: #ffffff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  margin-bottom: 1em;
-}
-.resume-download-btn:hover {
-  background: #444;
-  color: #ffffff;
-}
-.resume-download-btn:active {
-  background: #111;
 }
 
 /* make sure the card container uses a responsive grid */
@@ -504,8 +588,8 @@ a {
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
-/* <------------ End of CSS/home.css --> */
 
+/* ========== Resume Download Button ========== */
 /* Base reset for the button */
 .resume-download-btn {
   --cta-bg: #333;
@@ -526,6 +610,7 @@ a {
   transform: skewX(-15deg);
   transition: box-shadow 0.5s ease, transform 0.5s ease;
   border-radius: 4px; /* optional */
+  margin-bottom: 1em;
 }
 
 /* keyboard focus */
@@ -536,14 +621,21 @@ a {
 
 /* hover depth */
 .resume-download-btn:hover {
+  background: #444;
+  color: #ffffff;
   box-shadow: 10px 10px 0 var(--cta-pop);
+}
+
+/* active state */
+.resume-download-btn:active {
+  background: #111;
 }
 
 /* inner spans un-skewed so text/svg look normal */
 .resume-download-btn > span {
   transform: skewX(15deg);
 }
-F
+
 /* label & arrow layout */
 .resume-download-btn .label {
   white-space: nowrap;
@@ -569,20 +661,25 @@ F
   transition: transform 0.4s ease;
   transform: translateX(-60%);
 }
+
 .resume-download-btn path.two {
   transition: transform 0.5s ease;
   transform: translateX(-30%);
 }
+
 .resume-download-btn:hover path.one,
 .resume-download-btn:hover path.two {
   transform: translateX(0%);
 }
+
 .resume-download-btn:hover path.three {
   animation: color_anim 1s infinite 0.2s;
 }
+
 .resume-download-btn:hover path.two {
   animation: color_anim 1s infinite 0.4s;
 }
+
 .resume-download-btn:hover path.one {
   animation: color_anim 1s infinite 0.6s;
 }
@@ -610,18 +707,8 @@ F
   }
 }
 
-/* ===== Footer design tokens ===== */
-:root {
-  --footer-bg: #1b2029; /* dark slate */
-  --footer-fg: #e9edf3; /* light text */
-  --muted: #b7beca;
-  --accent: #fbc638;
-  --card-radius: 14px;
-  --pad: 28px;
-  --maxw: 1200px;
-}
-
-/* ===== Footer card layout ===== */
+/* ========== Footer ========== */
+/* Footer card layout */
 .footer-card {
   background: transparent;
   color: var(--footer-fg);
@@ -747,7 +834,7 @@ F
   color: var(--footer-fg);
 }
 
-/* ===== Responsive ===== */
+/* ===== Footer Responsive ===== */
 @media (max-width: 900px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
