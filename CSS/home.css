@@ -56,6 +56,9 @@ body.light-mode .name-track-wrap .name-ticker-2,
 body.light-mode .name-track-wrap .name-ticker-3 {
   color: #222 !important;
 }
+body.light-mode .footer-card {
+  background-color: #cfcfcf;
+}
 
 body.light-mode .bio .resume-cta .label {
   color: #ffffff;
@@ -87,8 +90,8 @@ a {
 
 /* ========== Header / Navbar ========== */
 .header-navbar {
-  font-family: "Kumar One", cursive;
-  /* font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; */
+  /* font-family: "Kumar One", cursive; */
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   position: fixed;
   top: 0;
   width: 100%;
@@ -719,6 +722,7 @@ a {
   padding: var(--pad) var(--pad) calc(var(--pad) * 1.5);
   position: relative;
   overflow: hidden;
+  background-color: #202020;
 }
 
 /* top grid */
@@ -744,6 +748,20 @@ a {
   padding: 0;
 }
 
+.footer-col ul.contacts-footer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: flex-end; /* align the items to the right */
+}
+
+.footer-col ul.contacts-footer a {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+
 .footer-col li {
   margin: 6px 0;
 }
@@ -752,6 +770,7 @@ a {
   color: var(--footer-fg);
   text-decoration: none;
   opacity: 0.9;
+  letter-spacing: 2px;
 }
 
 .footer-col a:hover {
@@ -781,12 +800,16 @@ a {
 /* corner labels container */
 .footer-corners {
   position: absolute;
-  top: -18px; /* adjust depending on visual spacing */
+  /* top: -18px; adjust depending on visual spacing */
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between; /* pushes left + right spans to edges of the name width */
   pointer-events: none; /* optional */
+}
+
+.contacts-footer li {
+  align-items: end;
 }
 
 /* corner micro label text */

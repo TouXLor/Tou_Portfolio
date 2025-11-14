@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const response = await fetch("./data/experience.json");
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     data = await response.json();
+    console.log("Loaded experiences:", data);
   } catch (err) {
     console.error("Error loading experiences:", err);
     grid.innerHTML = `<p>Error loading experiences: ${err.message}</p>`;
@@ -83,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function createCard(experience, idx) {
     if (!experience) return "";
     const imagePath = experience.image || "./img/placeholder.png";
+
     return `
       <article class="card-article" data-index="${idx}" data-category="${
       experience.category || ""
@@ -118,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const xp = data[idx];
     if (!xp) return;
 
+    console.log("Opening modal for:", xp.title, xp);
+
     // Fill modal content safely
     mTitle.textContent = xp.title || "Untitled";
     mOrg.textContent = xp.organization || "";
@@ -133,15 +137,47 @@ document.addEventListener("DOMContentLoaded", function () {
       ? xp.tools.map((t) => `<li>#${t}</li>`).join("")
       : "";
 
-    // gallery (array of image urls)
-    mGallery.innerHTML =
-      Array.isArray(xp.gallery) && xp.gallery.length
-        ? xp.gallery
-            .map((src) => `<img src="${src}" alt="${xp.title} image">`)
-            .join("")
-        : xp.image
-        ? `<img src="${xp.image}" alt="${xp.title} image">`
-        : "";
+    // gallery (supports both string URLs and objects { src, alt, link })
+    if (Array.isArray(xp.gallery) && xp.gallery.length) {
+      console.log("Rendering gallery for:", xp.title, xp.gallery);
+
+      mGallery.innerHTML = xp.gallery
+        .map((item) => {
+          let src, alt, link;
+
+          // Old format: ["./img/foo.png", "./img/bar.png"]
+          if (typeof item === "string") {
+            src = item;
+            alt = `${xp.title} image`;
+            link = null;
+          }
+          // New format: [{ src, alt, link }]
+          else if (item && typeof item === "object") {
+            src = item.src;
+            alt = item.alt || `${xp.title} image`;
+            link = item.link || null;
+          } else {
+            return "";
+          }
+
+          if (!src) return "";
+
+          const imgMarkup = `<img src="${src}" alt="${alt}">`;
+
+          // Make image clickable if link exists
+          if (link) {
+            return `<a href="${link}" target="_blank" rel="noopener">${imgMarkup}</a>`;
+          }
+
+          return imgMarkup;
+        })
+        .join("");
+    } else if (xp.image) {
+      // Fallback if no gallery
+      mGallery.innerHTML = `<img src="${xp.image}" alt="${xp.title} image">`;
+    } else {
+      mGallery.innerHTML = "";
+    }
 
     // links (array of {label, url})
     mLinks.innerHTML = Array.isArray(xp.links)
@@ -165,11 +201,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target === modal || e.target.classList.contains("xp-modal__backdrop"))
       closeModal();
   });
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
   });
 
-  // ---- your existing filter code unchanged ----
+  // ---- filter code unchanged ----
   nav.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
     if (!btn) return;

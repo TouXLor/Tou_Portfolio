@@ -3,20 +3,31 @@
     "title": "Graphic & Web Design Intern",
     "organization": "IH Concepts",
     "slug": "ih-concepts-intern",
-    "longSummary": "Worked on WordPress client sites, creating responsive templates and custom shortcodes to speed up content creation. Improved site load times and accessibility.",
+    "longSummary": "Contributed to the design and development of client-facing WordPress pages, building responsive blog, tutorial, and press templates while enhancing homepage styling. Created reusable PHP shortcodes, improved front-end accessibility, and collaborated with design, marketing, and editorial teams. Gained hands-on experience in SEO, local search (MEO), and brand-focused content production.",
     "responsibilities": [
-      "Developed responsive WordPress templates",
-      "Implemented custom PHP shortcodes for reusable blocks",
-      "Optimized images and front-end assets for performance",
-      "Wrote documentation and tutorials for client editors"
+      "Developed and styled WordPress pages using PHP, HTML, CSS, and JS",
+      "Created responsive templates for blog, tutorial, and press sections",
+      "Implemented reusable PHP shortcodes and template parts",
+      "Modified and optimized front-end CSS for accessibility and UX",
+      "Optimized images and assets to improve site load performance",
+      "Assisted with graphic design, branding assets, and page layouts",
+      "Collaborated with marketing and editorial teams on content strategy",
+      "Wrote internal documentation and tutorials for client editors",
+      "Supported basic SEO and MEO improvements across pages"
     ],
-    "tools": ["WordPress", "PHP", "Sass", "Figma"],
-    "gallery": [
-      "./img/exp_thumbnails/ih_1.png",
-      "./img/exp_thumbnails/ih_2.png"
+    "tools": [
+      "WordPress",
+      "PHP",
+      "HTML",
+      "CSS/Sass",
+      "JavaScript",
+      "Figma",
+      "SEO/MEO Tools"
     ],
+    "image": "img/exp_gallery/ihc/ihc-blog.png",
+    "gallery": ["./img/exp_thumbnails/treasureLogo.png"],
     "dates": "Jun 2023 - Aug 2023",
-    "links": []
+    "links": ["https://ihconcepts.com/blog/"]
   },
   {
     "title": "Web Design Chair",
@@ -29,7 +40,7 @@
       "Deployed responsive templates and hosted updates"
     ],
     "tools": ["HTML", "CSS", "JavaScript"],
-    "gallery": ["./img/exp_thumbnails/aoe_1.png"],
+    "gallery": ["img/exp_thumbnails/aoe_1.png"],
     "dates": "Sep 2022 - May 2023",
     "links": []
   },
