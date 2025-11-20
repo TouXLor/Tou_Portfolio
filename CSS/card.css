@@ -1,16 +1,25 @@
+/* =======================================
+   BASE LAYOUT & GRID (Mobile-first)
+   ======================================= */
+
 /* Layout containers */
 .container {
   display: grid;
   place-items: center;
-  margin-inline: 1.5rem;
+  margin-inline: 1rem; /* mobile spacing */
 }
 
 .card-container {
   display: grid;
   row-gap: 1.5rem;
+  grid-template-columns: 1fr; /* default: 1 column */
+  column-gap: 1.5rem;
 }
 
-/* Card base + states */
+/* =======================================
+   CARD BASE + STATES
+   ======================================= */
+
 .card-article {
   position: relative;
   overflow: hidden;
@@ -45,7 +54,10 @@
   animation: show-overflow 2s forwards;
 }
 
-/* Card image */
+/* =======================================
+   CARD IMAGE
+   ======================================= */
+
 .card-img {
   width: auto; /* so it never overflows its container */
   height: auto; /* keep the aspect ratio */
@@ -58,23 +70,26 @@
   transition: transform 0.3s ease;
 }
 
-/* Card content panel */
+/* =======================================
+   CARD CONTENT PANEL
+   ======================================= */
+
 .card-data {
   font-family: "Kulim Park", sans-serif;
-  width: 80%;
+  width: 250px; /* mobile width */
   height: auto;
   position: absolute;
   bottom: -9rem;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  padding: 1rem;
   opacity: 0;
   color: black;
   background-color: rgb(239, 239, 239);
   z-index: 1;
   transform-origin: center center;
-  padding: 1.5rem 2rem;
   border-radius: 1rem;
-  margin-inline: auto;
   transition: opacity 1s 1s;
   box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -90,11 +105,14 @@
 }
 
 .card-article.active .card-data {
-  transform: translate(0) scale() !important;
+  transform: translate(0) scale(1) !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Card text */
+/* =======================================
+   CARD TEXT
+   ======================================= */
+
 .card-description {
   display: block;
   font-size: var(--small-font-size);
@@ -109,7 +127,10 @@
   margin-bottom: 0.75rem;
 }
 
-/* Button reset + styles */
+/* =======================================
+   BUTTON RESET + STYLES
+   ======================================= */
+
 .card-button,
 .card-button *,
 .card-button :after,
@@ -145,7 +166,10 @@
   outline: none;
 }
 
-/* Extra expandable content */
+/* =======================================
+   EXTRA EXPANDABLE CONTENT
+   ======================================= */
+
 .card-extra {
   max-height: 0;
   overflow: hidden;
@@ -164,10 +188,13 @@
   padding: 1rem 1.5rem;
 }
 
-/* Loading / error UI for grids */
+/* =======================================
+   LOADING / ERROR UI
+   ======================================= */
+
 .card-container .loading,
 .card-container .error {
-  grid-column: 1 / -1; /* span full width of grid */
+  grid-column: 1 / -1;
   text-align: center;
   padding: 2rem 1rem;
   color: #ddd;
@@ -181,7 +208,10 @@
   border-radius: 8px;
 }
 
-/* Animations */
+/* =======================================
+   ANIMATIONS
+   ======================================= */
+
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -211,7 +241,7 @@
 
 @keyframes show-overflow {
   0% {
-    overflow: initital;
+    overflow: initial;
     pointer-events: none;
   }
   50% {
@@ -219,54 +249,230 @@
   }
 }
 
-/* Responsive tweaks */
+/* =======================================
+   NAV / BIO – MOBILE DEFAULT
+   ======================================= */
 
-/* For all size */
-@media (max-width: 900px) {
+.links,
+.icons {
+  display: none;
+}
+
+.logo {
+  justify-content: center;
+  text-align: center;
+}
+
+.bio {
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+/* =======================================
+   RESPONSIVE BREAKPOINTS
+   ======================================= */
+
+/* 2. Small mobile (≥ 400px) */
+@media (min-width: 400px) {
+  .card-container,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem; /* optional smaller spacing */
+    row-gap: 1.5rem;
+  }
+
+  .card-article {
+    margin-bottom: 1rem; /* tighten spacing */
+  }
+
+  /* Make the cards smaller */
+  .card-img {
+    width: 100%;
+    height: 15vh;
+  }
+
+  .card-data {
+    width: 90%;
+  }
+  .project-nav {
+    font-size: 1rem;
+  }
+  .experience-nav {
+    font-size: 1rem;
+  }
+  .experiences-header {
+    font-size: 1.5rem;
+  }
+  .project-header {
+    font-size: 1.5rem;
+  }
+}
+
+/* 3. Mobile / Small tablet (≥ 600px) */
+@media (min-width: 600px) {
+  /* More breathing room or font-size tweaks if needed */
+  .card-container,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem; /* optional smaller spacing */
+    row-gap: 1.5rem;
+  }
+  .card-article {
+    margin-bottom: 1rem; /* tighten spacing */
+  }
+
+  /* Make the cards smaller */
+  .card-img {
+    width: 35vw;
+    height: 20vh;
+  }
+}
+
+/* 4. Tablet / Small laptop (≥ 900px) */
+@media (min-width: 900px) {
   .links,
   .icons {
-    display: none;
+    display: flex;
   }
+
   .logo {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
   }
+
   .bio {
-    grid-template-columns: 1fr;
-    gap: 1em;
-  }
-}
-
-/* Small Devices */
-@media screen and (max-width: 340px) {
-  container {
-    margin-inline: 1rem;
-  }
-  .card-data {
-    width: 250px;
-    padding: 1rem;
-  }
-}
-
-/* Medium Devices */
-@media screen and (min-width: 768px) {
-  .card-container {
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: 2.5rem;
-  }
-}
-
-/* Large Devices */
-@media screen and (min-width: 1120px) {
-  .container {
-    height: auto;
+    grid-template-columns: repeat(2, 1fr);
   }
   .card-container {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.5rem;
+    column-gap: 1rem; /* optional smaller spacing */
+    row-gap: 1.5rem;
   }
+  .card-article {
+    margin-bottom: 1rem; /* tighten spacing */
+  }
+
+  /* Make the cards smaller */
   .card-img {
-    width: 400px;
-    height: 300px;
+    width: 25vw;
+    height: 20vh;
+  }
+  .project-nav {
+    font-size: 1.5rem;
+  }
+  .experience-nav {
+    font-size: 1.5rem;
+  }
+  .experiences-header {
+    font-size: 2rem;
+  }
+  .project-header {
+    font-size: 2rem;
+  }
+}
+
+/* 5. Desktop (≥ 1120px) */
+@media (min-width: 1120px) {
+  .container {
+    height: auto;
+    margin-inline: 1.5rem; /* a bit wider on desktop */
+  }
+  .card-container,
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem; /* optional smaller spacing */
+    row-gap: 1.5rem;
+  }
+  .card-article {
+    margin-bottom: 1rem; /* tighten spacing */
+  }
+
+  /* Make the cards smaller */
+  .card-img {
+    width: 30vw;
+    height: 25vh;
+  }
+  .project-nav {
+    font-size: 1.5rem;
+  }
+  .experience-nav {
+    font-size: 1.5rem;
+  }
+  .experiences-header {
+    font-size: 2rem;
+  }
+  .project-header {
+    font-size: 2rem;
+  }
+}
+
+/* 6. Large desktop (≥ 1400px) */
+@media (min-width: 1400px) {
+  /* Optional refinements (larger type, more spacing, etc.) */
+  .container {
+    height: auto;
+    margin-inline: 1.5rem; /* a bit wider on desktop */
+  }
+  .card-container,
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem; /* optional smaller spacing */
+    row-gap: 1.5rem;
+  }
+  .card-article {
+    margin-bottom: 1rem; /* tighten spacing */
+  }
+
+  /* Make the cards smaller */
+  .card-img {
+    width: 25vw;
+    height: 30vh;
+  }
+  .project-nav {
+    font-size: 2rem;
+  }
+  .experience-nav {
+    font-size: 2rem;
+  }
+  .experiences-header {
+    font-size: 2.5rem;
+  }
+  .project-header {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1680px) {
+  /* Optional refinements (larger type, more spacing, etc.) */
+  .container {
+    height: auto;
+    margin-inline: 1.5rem; /* a bit wider on desktop */
+  }
+  .card-container,
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem; /* optional smaller spacing */
+    row-gap: 1.5rem;
+  }
+  .card-article {
+    margin-bottom: 1rem; /* tighten spacing */
+  }
+
+  /* Make the cards smaller */
+  .card-img {
+    width: 25vw;
+    height: 35vh;
+  }
+  .project-nav {
+    font-size: 2rem;
+  }
+  .experience-nav {
+    font-size: 2rem;
+  }
+  .experiences-header {
+    font-size: 2.5rem;
+  }
+  .project-header {
+    font-size: 2.5rem;
   }
 }
