@@ -127,6 +127,51 @@
       : project.image
       ? [project.image]
       : [];
+    // gallery supports both string URLs and objects { src, alt, link }
+    const galleryMarkup = images.length
+      ? `<div class="pd-gallery">
+      ${images
+        .map((item) => {
+          // CASE 1 — old format: "gallery": ["./img/foo.png"]
+          if (typeof item === "string") {
+            return `
+              <img 
+                src="${item}" 
+                alt="${title}" 
+                loading="lazy"
+                onerror="this.onerror=null; this.src='./img/placeholder.png'" 
+              />
+            `;
+          }
+
+          // CASE 2 — new format: "gallery": [{ src, alt, link }]
+          if (item && typeof item === "object") {
+            const src = item.src;
+            const alt = item.alt || title;
+            const link = item.link;
+
+            if (!src) return "";
+
+            const imgTag = `
+              <img 
+                src="${src}" 
+                alt="${alt}"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='./img/placeholder.png'" 
+              />
+            `;
+
+            // If link exists, wrap image with <a>
+            return link
+              ? `<a href="${link}" target="_blank" rel="noopener">${imgTag}</a>`
+              : imgTag;
+          }
+
+          return "";
+        })
+        .join("")}
+    </div>`
+      : "";
 
     return `
       <header>
@@ -147,19 +192,13 @@
         
         ${
           tools.length
-            ? `<p><strong>Tools:</strong> ${tools.join(", ")}</p>`
+            ? `<p class="pd-tools"><strong>Tools:</strong> ${tools.join(
+                ", "
+              )}</p>`
             : ""
         }
-        ${
-          images.length
-            ? `<div class="pd-gallery">${images
-                .map(
-                  (src) =>
-                    `<img src="${src}" loading="lazy" onerror="this.onerror=null; this.src='./img/placeholder.png'" />`
-                )
-                .join("")}</div>`
-            : ""
-        }
+        ${galleryMarkup}
+
       </section>
     `;
   }

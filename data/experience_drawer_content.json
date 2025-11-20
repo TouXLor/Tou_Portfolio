@@ -13,7 +13,8 @@
       "Assisted with graphic design, branding assets, and page layouts",
       "Collaborated with marketing and editorial teams on content strategy",
       "Wrote internal documentation and tutorials for client editors",
-      "Supported basic SEO and MEO improvements across pages"
+      "Supported basic SEO and MEO improvements across pages",
+      "Pages worked one include blog, tutorials, press releases, and homepage."
     ],
     "tools": [
       "WordPress",
@@ -25,7 +26,28 @@
       "SEO/MEO Tools"
     ],
     "image": "img/exp_gallery/ihc/ihc-blog.png",
-    "gallery": ["./img/exp_thumbnails/treasureLogo.png"],
+    "gallery": [
+      {
+        "src": "./img/exp_gallery/ihc/ihc-home.png",
+        "link": "https://ihconcepts.com/",
+        "alt": "IH Concepts Blog Template"
+      },
+      {
+        "src": "./img/exp_gallery/ihc/ihc-blog.png",
+        "link": "https://ihconcepts.com/blog/",
+        "alt": "IH Concepts Blog Template"
+      },
+      {
+        "src": "./img/exp_gallery/ihc/ihc-blog.png",
+        "link": "https://ihconcepts.com/blog/",
+        "alt": "IH Concepts Blog Template"
+      },
+      {
+        "src": "./img/exp_gallery/ihc/ihc-blog.png",
+        "link": "https://ihconcepts.com/blog/",
+        "alt": "IH Concepts Blog Template"
+      }
+    ],
     "dates": "Jun 2023 - Aug 2023",
     "links": ["https://ihconcepts.com/blog/"]
   },
@@ -40,7 +62,7 @@
       "Deployed responsive templates and hosted updates"
     ],
     "tools": ["HTML", "CSS", "JavaScript"],
-    "gallery": ["img/exp_thumbnails/aoe_1.png"],
+    "gallery": ["img/exp_thumbnails/ihc.png"],
     "dates": "Sep 2022 - May 2023",
     "links": []
   },
