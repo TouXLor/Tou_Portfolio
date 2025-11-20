@@ -51,11 +51,14 @@ body.light-mode .experience-nav button,
 body.light-mode .footer-card,
 body.light-mode .corner-left-top,
 body.light-mode .corner-right-top,
+body.light-mode .name-wrap .footer-top .footer-col h4,
+body.light-mode .name-wrap .footer-top .footer-cta h4,
 body.light-mode .name-track-wrap .name-ticker,
 body.light-mode .name-track-wrap .name-ticker-2,
 body.light-mode .name-track-wrap .name-ticker-3 {
   color: #222 !important;
 }
+
 body.light-mode .footer-card {
   background-color: #cfcfcf;
 }
