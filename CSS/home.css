@@ -383,39 +383,223 @@ a {
   letter-spacing: 0.5px;
 }
 
-/* Medium screens (e.g. portrait tablets, small laptops) */
-@media (max-width: 900px) {
+/* =======================================
+   BASE (0–399px)
+   ======================================= */
+
+.skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.skill-table tr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-table th {
+  flex: 1 1 calc(50% - 1rem); /* 2 per row */
+  margin: 0.5rem;
+  box-sizing: border-box;
+}
+
+.skill-item img {
+  max-width: 60px;
+  height: auto;
+}
+
+.skill-item h3 {
+  font-size: 1.2rem;
+}
+
+/* =======================================
+   ≥ 400px — Small Mobile
+   ======================================= */
+@media (min-width: 400px) {
+  .skill-table th {
+    flex: 1 1 calc(50% - 1rem); /* 2 per row */
+    margin: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .skill-header {
+    font-size: 1.5rem;
+  }
+}
+
+/* =======================================
+   ≥ 600px — Mobile / Small Tablet
+   ======================================= */
+@media (min-width: 600px) {
+  .skill-table th {
+    flex: 1 1 calc(50% - 1rem); /* 2 per row */
+    margin: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .skill-item img {
+    max-width: 70px;
+  }
+
+  .skill-item h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* =======================================
+   ≥ 900px — Tablet / Small Laptop
+   ======================================= */
+@media (min-width: 900px) {
   .skill-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  .skill-header {
+    font-size: 2.5rem;
+  }
+
+  .skill-table tr {
+    display: flex;
+    flex-wrap: nowrap; /* 1 row */
+    justify-content: center; /* center icons */
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content; /* shrink-wrap row */
+  }
+
+  .skill-table th {
+    flex: 0 0 auto; /* don’t stretch / shrink */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skill-item img {
+    width: 48px; /* icon size */
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .skill-item h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* =======================================
+   ≥ 1120px — Desktop
+   ======================================= */
+@media (min-width: 1120px) {
+  .skill-table {
+    border-collapse: collapse;
+    border-spacing: 0;
     width: 100%;
   }
 
   .skill-table tr {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* 1 row */
+    justify-content: center; /* center icons */
+    align-items: center;
+    margin: 0 auto;
+    gap: 3rem;
+    width: fit-content; /* shrink-wrap row */
   }
 
   .skill-table th {
-    flex: 1 1 calc(50% - 1rem);
-    margin: 0.5rem;
-    box-sizing: border-box;
-  }
-}
-
-/* Small screens (phones) */
-@media (max-width: 600px) {
-  .skill-table th {
-    flex: 1 1 100%;
-    margin: 0.25rem 0;
+    flex: 0 0 auto; /* don’t stretch / shrink */
+    text-align: center;
+    margin: 0;
+    padding: 0;
   }
 
   .skill-item img {
-    max-width: 60px;
-    height: auto;
+    width: 90px; /* icon size */
+    height: 90px;
+    object-fit: contain;
   }
 
   .skill-item h3 {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* =======================================
+   ≥ 1400px — Large Desktop
+   ======================================= */
+
+@media (min-width: 1400px) {
+  .skill-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  .skill-table tr {
+    display: flex;
+    flex-wrap: nowrap; /* 1 row */
+    justify-content: center; /* center icons */
+    align-items: center;
+    margin: 0 auto;
+    gap: 3rem;
+    width: fit-content; /* shrink-wrap row */
+  }
+
+  .skill-table th {
+    flex: 0 0 auto; /* don’t stretch / shrink */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skill-item img {
+    width: 90px; /* icon size */
+    height: 90px;
+    object-fit: contain;
+  }
+
+  .skill-item h3 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+}
+@media (min-width: 1680px) {
+  .skill-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  .skill-table tr {
+    display: flex;
+    flex-wrap: nowrap; /* 1 row */
+    justify-content: center; /* center icons */
+    align-items: center;
+    margin: 0 auto;
+    gap: 3rem;
+    width: fit-content; /* shrink-wrap row */
+  }
+
+  .skill-table th {
+    flex: 0 0 auto; /* don’t stretch / shrink */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skill-item img {
+    width: 90px; /* icon size */
+    height: 90px;
+    object-fit: contain;
+  }
+
+  .skill-item h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
 }
 
