@@ -253,21 +253,6 @@
    NAV / BIO – MOBILE DEFAULT
    ======================================= */
 
-.links,
-.icons {
-  display: none;
-}
-
-.logo {
-  justify-content: center;
-  text-align: center;
-}
-
-.bio {
-  grid-template-columns: 1fr;
-  gap: 1em;
-}
-
 /* =======================================
    RESPONSIVE BREAKPOINTS
    ======================================= */

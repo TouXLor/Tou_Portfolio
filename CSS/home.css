@@ -125,7 +125,56 @@ a {
   justify-content: flex-end;
   align-items: center;
 }
+.links,
+.icons {
+  display: none;
+}
 
+.bio {
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+@media (min-width: 400px) {
+  .logo {
+    padding-left: 0;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .icons {
+    display: flex;
+  }
+  .icons .display {
+    display: flex;
+    justify-content: end;
+  }
+  .icons a {
+    display: none;
+  }
+  .header-navbar {
+    position: relative;
+  }
+}
+@media (min-width: 600px) {
+  .logo {
+    padding-left: 0;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .icons {
+    display: flex;
+  }
+  .icons .display {
+    display: flex;
+    justify-content: center;
+  }
+  .icons a {
+    display: flex;
+  }
+  .header-navbar {
+    position: relative;
+  }
+}
 /* ========== Hero / Focus Section ========== */
 .focus-point {
   position: relative;
