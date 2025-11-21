@@ -1378,22 +1378,8 @@ a {
 }
 /* ===== Footer Responsive ===== */
 
-/* Tablet and small laptop */
-@media (max-width: 900px) {
-  .footer-top {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-  }
-
-  .footer-cta {
-    grid-column: 1 / -1;
-    justify-self: end;
-    margin-top: 8px;
-  }
-}
-
-/* Mobile (general) */
-@media (max-width: 600px) {
+/* Extra small screens 0px-399px*/
+@media (min-width: 0px) {
   .footer-top {
     grid-template-columns: 1fr; /* single column on mobile */
   }
@@ -1457,50 +1443,40 @@ a {
     order: 2;
   }
 }
-
-/* Extra small screens*/
-@media (max-width: 400px) {
-  .footer-card {
-    padding: 20px 12px 28px;
-  }
-
+/* Mobile (general) */
+@media (min-width: 400px) {
   .footer-top {
-    gap: 20px; /* tighten vertical gaps a bit */
+    grid-template-columns: 1fr; /* single column on mobile */
   }
 
-  .footer-col a {
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+  .corner-right-top {
+    display: none; /* hide right micro-label to reduce clutter */
   }
 
-  .footer-col ul.contacts-footer a {
-    font-size: 1.2rem; /* email + phone a bit smaller */
-    letter-spacing: 2px;
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: flex-start;
+    text-align: left;
   }
 
+  .footer-cta {
+    place-self: start;
+    align-self: auto;
+    text-align: left;
+    margin-top: 12px;
+  }
   .name-wrap {
     width: 100%;
     text-align: center;
   }
-
+  .footer-corners {
+    justify-content: center;
+    gap: 12px;
+  }
   .big-name {
     font-size: clamp(1.9rem, 9vw + 0.1rem, 3rem); /* smaller cap on SE */
     line-height: 1;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-    text-align: center;
-    font-size: 9px;
-  }
-
-  .corner-left-top {
-    white-space: normal; /* allow wrapping */
-    text-align: center;
-    width: 100%;
-    display: block;
+    margin-top: 2rem;
   }
   /* NEW: make contacts column behave like the others */
   .footer-col ul.contacts-footer {
@@ -1515,11 +1491,32 @@ a {
     align-items: center;
     margin-top: 12px;
   }
-  .footer-bottom .back-to-top {
-    color: #ffffff;
-    margin-top: 0.5rem;
+  .footer-bottom {
+    display: flex;
+    flex-direction: column; /* stack top → bottom */
+    align-items: center; /* center horizontally */
+    text-align: center;
+    gap: 0.5rem; /* optional spacing */
   }
   .footer-bottom .credit {
     font-size: 0.5rem;
+    order: 1;
+  }
+  .footer-bottom .back-to-top {
+    color: #ffffff;
+    margin-top: 0.5rem;
+    order: 2;
+  }
+}
+/* Tablet and small laptop */
+@media (min-width: 600px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .footer-cta {
+    grid-column: 1 / -1;
+    margin-top: 8px;
   }
 }
