@@ -322,52 +322,60 @@ a {
 }
 
 /* ========== Bio Section ========== */
-.bio {
-  /* font-family: "Kulim Park", sans-serif; */
-  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: white;
-  text-align: center;
-  padding: 4rem 2rem;
+
+@media (min-width: 0px) {
+  .bio {
+    /* font-family: "Kulim Park", sans-serif; */
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto,
+      sans-serif;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .about-header {
+    /* font-family: "Kumar One", cursive; */
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto,
+      sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
+  .bio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns */
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .bio-paragraph p {
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 100%;
+  }
+
+  .picture-me {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Aligns image to the right */
+    align-items: center; /* Vertically centers image in the column */
+  }
+
+  .picture-me img {
+    width: 60%; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    display: block;
+    padding-bottom: 10rem;
+  }
 }
 
-.about-header {
-  /* font-family: "Kumar One", cursive; */
-  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  text-transform: uppercase;
-}
-
-.bio-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* two columns */
-  align-items: center;
-  gap: 2rem;
-}
-
-.bio-paragraph p {
-  align-items: center;
-  text-align: right;
-  padding-left: 5rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-}
-
-.picture-me {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center; /* Aligns image to the right */
-  align-items: center; /* Vertically centers image in the column */
-}
-
-.picture-me img {
-  width: 60%; /* Set your desired width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-  display: block;
-  padding-bottom: 10rem;
-}
 @media (min-width: 400px) {
   .bio-container {
     grid-template-columns: 1fr;
@@ -487,12 +495,12 @@ a {
 
   display: inline-flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 6px 10px;
   text-decoration: none;
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   font-weight: 100;
   font-style: italic;
-  font-size: clamp(10px, 2vw + 8px, 15px);
+  font-size: clamp(10px, 2vw + 8px, 12px);
   line-height: 1;
   color: #fff;
   background: var(--cta-bg);
@@ -708,32 +716,36 @@ a {
 /* =======================================
    BASE (0–399px)
    ======================================= */
+@media (min-width: 0px) {
+  .skill-header {
+    font-size: 1.3rem;
+  }
+  .skill-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
-.skill-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+  .skill-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.skill-table tr {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .skill-table th {
+    flex: 1 1 calc(50% - 1rem); /* 2 per row */
+    margin: 0.5rem;
+    box-sizing: border-box;
+  }
 
-.skill-table th {
-  flex: 1 1 calc(50% - 1rem); /* 2 per row */
-  margin: 0.5rem;
-  box-sizing: border-box;
-}
+  .skill-item img {
+    max-width: 60px;
+    height: auto;
+  }
 
-.skill-item img {
-  max-width: 60px;
-  height: auto;
-}
-
-.skill-item h3 {
-  font-size: 1.2rem;
+  .skill-item h3 {
+    font-size: 1rem;
+  }
 }
 
 /* =======================================
@@ -970,17 +982,19 @@ a {
 /* =======================================
    BASE (0–399px)
    ======================================= */
-.education-degree,
-.education-date {
-  font-size: 0.7rem;
-}
+@media (min-width: 0px) {
+  .education-degree,
+  .education-date {
+    font-size: 0.7rem;
+  }
 
-.education-title {
-  font-size: 0.9rem;
-}
+  .education-title {
+    font-size: 0.9rem;
+  }
 
-.education-header {
-  font-size: 1.3rem;
+  .education-header {
+    font-size: 1.3rem;
+  }
 }
 
 /* =======================================
