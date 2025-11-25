@@ -1404,9 +1404,21 @@ a {
     width: 100%;
     text-align: center;
   }
+  .footer-top .footer-col h4 {
+    font-size: clamp(0.6rem, 3vw, 0.9rem);
+    letter-spacing: 0.05em;
+  }
+  .footer-col ul a {
+    font-size: clamp(0.9rem, 5vw, 1.25rem);
+    letter-spacing: 0.03em;
+  }
   .footer-corners {
     justify-content: center;
     gap: 12px;
+  }
+  .footer-col ul.contacts-footer a {
+    font-size: clamp(0.9rem, 5vw, 1.25rem);
+    letter-spacing: 0.03em;
   }
   .big-name {
     font-size: clamp(1.9rem, 9vw + 0.1rem, 3rem); /* smaller cap on SE */
@@ -1443,7 +1455,7 @@ a {
     order: 2;
   }
 }
-/* Mobile (general) */
+/* Mobile (general)  400 - 600 */
 @media (min-width: 400px) {
   .footer-top {
     grid-template-columns: 1fr; /* single column on mobile */
@@ -1508,15 +1520,346 @@ a {
     order: 2;
   }
 }
-/* Tablet and small laptop */
+
+/* Tablet and small laptop  600 - 900 */
 @media (min-width: 600px) {
   .footer-top {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
+  }
+
+  .corner-right-top {
+    display: flex; /* hide right micro-label to reduce clutter */
+  }
+
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .footer-cta {
-    grid-column: 1 / -1;
-    margin-top: 8px;
+    place-self: start;
+    align-self: auto;
+    text-align: left;
+    margin-top: 12px;
+  }
+  .name-wrap {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-corners {
+    display: flex;
+    justify-content: space-between; /* left item goes left, right item goes right */
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .corner-left-top {
+    text-align: left;
+  }
+
+  .corner-right-top {
+    text-align: right;
+  }
+
+  .big-name {
+    font-size: clamp(2.2rem, 12vw, 7rem);
+    line-height: 1;
+    margin-top: 2rem;
+  }
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer-cta {
+    place-self: center;
+    align-self: auto;
+    text-align: left;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-direction: column; /* stack top → bottom */
+    align-items: center; /* center horizontally */
+    text-align: center;
+    gap: 0.5rem; /* optional spacing */
+  }
+  .footer-bottom .credit {
+    font-size: 0.75rem;
+    order: 1;
+  }
+  .footer-bottom .back-to-top {
+    color: #ffffff;
+    margin-top: 0.5rem;
+    order: 2;
+    font-size: 1rem;
+  }
+}
+
+/* laptop 900+ */
+@media (min-width: 900px) {
+  .footer-top {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-cta {
+    place-self: start;
+    align-self: auto;
+    text-align: left;
+    margin-top: 12px;
+  }
+  .name-wrap {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-corners {
+    display: flex;
+    justify-content: space-between; /* left item goes left, right item goes right */
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .corner-left-top {
+    text-align: left;
+  }
+
+  .corner-right-top {
+    text-align: right;
+  }
+  .big-name {
+    font-size: clamp(2.2rem, 12vw, 9rem);
+    line-height: 1;
+    margin-top: 2rem;
+  }
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer-cta {
+    place-self: center;
+    align-self: auto;
+    text-align: left;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-direction: column; /* stack top → bottom */
+    align-items: center; /* center horizontally */
+    text-align: center;
+    gap: 0.5rem; /* optional spacing */
+  }
+  .footer-bottom .credit {
+    font-size: 1rem;
+    order: 1;
+  }
+  .footer-bottom .back-to-top {
+    color: #ffffff;
+    margin-top: 0.5rem;
+    order: 2;
+  }
+}
+
+/* laptop 1400+ */
+@media (min-width: 1400px) {
+  .footer-top {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-top .footer-col h4 {
+    font-size: clamp(0.6rem, 3vw, 1rem);
+    letter-spacing: 0.05em;
+  }
+  .footer-col ul a {
+    font-size: clamp(0.9rem, 5vw, 1.75rem);
+    letter-spacing: 0.03em;
+  }
+  .footer-col ul.contacts-footer a {
+    font-size: clamp(0.9rem, 5vw, 1.75rem);
+    letter-spacing: 0.03em;
+  }
+
+  .footer-cta {
+    place-self: start;
+    align-self: auto;
+    text-align: left;
+    margin-top: 12px;
+  }
+  .name-wrap {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-corners {
+    display: flex;
+    justify-content: space-between; /* left item goes left, right item goes right */
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .corner-left-top {
+    text-align: left;
+    font-size: clamp(0.45rem, 1.4vw, 0.85rem);
+  }
+
+  .corner-right-top {
+    text-align: right;
+    font-size: clamp(0.45rem, 1.4vw, 0.85rem);
+  }
+  .big-name {
+    font-size: clamp(2.2rem, 12.7vw, 12rem);
+    line-height: 1;
+    margin-top: 2rem;
+  }
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer-cta {
+    place-self: center;
+    align-self: auto;
+    text-align: left;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-direction: column; /* stack top → bottom */
+    align-items: center; /* center horizontally */
+    text-align: center;
+    gap: 0.5rem; /* optional spacing */
+  }
+  .footer-bottom .credit {
+    font-size: 1rem;
+    order: 1;
+  }
+  .footer-bottom .back-to-top {
+    color: #ffffff;
+    margin-top: 0.5rem;
+    order: 2;
+  }
+}
+
+/* laptop 1920+ */
+@media (min-width: 1920px) {
+  .footer-top {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-top .footer-col h4 {
+    font-size: clamp(0.6rem, 3vw, 1.25rem);
+    letter-spacing: 0.05em;
+  }
+  .footer-col ul a {
+    font-size: clamp(0.9rem, 5vw, 1.75rem);
+    letter-spacing: 0.03em;
+  }
+  .footer-col ul.contacts-footer a {
+    font-size: clamp(0.9rem, 5vw, 1.25rem);
+    letter-spacing: 0.03em;
+  }
+
+  .footer-cta {
+    place-self: start;
+    align-self: auto;
+    text-align: left;
+    margin-top: 12px;
+  }
+  .name-wrap {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-corners {
+    display: flex;
+    justify-content: space-between; /* left item goes left, right item goes right */
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .corner-left-top {
+    text-align: left;
+    font-size: clamp(0.45rem, 1.4vw, 1.25rem);
+  }
+
+  .corner-right-top {
+    text-align: right;
+    font-size: clamp(0.45rem, 1.4vw, 1.25rem);
+  }
+  .big-name {
+    font-size: clamp(2.2rem, 12.7vw, 21rem);
+    line-height: 1;
+    margin-top: 2rem;
+  }
+  /* NEW: make contacts column behave like the others */
+  .footer-col ul.contacts-footer {
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer-cta {
+    place-self: center;
+    align-self: auto;
+    text-align: left;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-direction: column; /* stack top → bottom */
+    align-items: center; /* center horizontally */
+    text-align: center;
+    gap: 0.5rem; /* optional spacing */
+  }
+  .footer-bottom .credit {
+    font-size: 1.5rem;
+    order: 1;
+  }
+  .footer-bottom .back-to-top {
+    color: #ffffff;
+    margin-top: 0.5rem;
+    order: 2;
+    font-size: 1.75rem;
   }
 }
