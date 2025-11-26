@@ -2,12 +2,12 @@
   {
     "title": "CoHabit Mobile Application Design",
     "slug": "cohabit-mobile-application-design",
-    "longSummary": "CoHabit is a roommate-matching concept focused on helping students find compatible roommates and manage shared living tasks. The project includes user flows for onboarding, roommate matching by interests and habits, chore scheduling, and an in-app messaging experience. Emphasis was placed on accessibility, clear information architecture, and mobile-first interactions.",
+    "longSummary": "CoHabit is a mobile UI/UX case study focused on helping students find compatible roommates and manage shared living tasks. The project includes onboarding flows, interest-based roommate matching, chore scheduling tools, and a simple in-app messaging system. The design emphasizes clarity, accessibility, and mobile-first interaction patterns.",
     "responsibilities": [
-      "Conducted user research and persona creation",
-      "Designed wireframes and high-fidelity mobile prototypes",
-      "Built interactive prototypes to validate onboarding and matching flows",
-      "Worked on accessibility checks and iterative usability testing"
+      "Conducted user research and created personas based on common roommate challenges",
+      "Designed low-fidelity wireframes and high-fidelity mobile prototypes in Figma",
+      "Built interactive prototypes to validate onboarding, matching, and task flows",
+      "Performed accessibility checks and iterative usability testing"
     ],
     "tools": ["Figma", "Sketch", "Adobe XD", "Principle"],
     "gallery": ["./img/projects_thumbnails/cohabit.png"],
@@ -15,14 +15,14 @@
     "links": []
   },
   {
-    "title": "StarFish Redesign",
+    "title": "StarFish Platform Redesign",
     "slug": "starfish-redesign",
-    "longSummary": "A full visual and interaction redesign for StarFish, a student resource platform. The redesign focused on improving discoverability of services, reducing cognitive load, and enhancing responsiveness across devices. Changes included updated typography, clearer CTAs, and improved navigational patterns to help students access resources faster.",
+    "longSummary": "A visual and interaction redesign of StarFish, a student resource and support platform. The redesign improved service discoverability, reduced cognitive load, and strengthened the information hierarchy. Work included UI system updates, responsive component redesigns, and new navigation patterns to help students access resources more efficiently.",
     "responsibilities": [
-      "Performed heuristic evaluations and accessibility audits",
-      "Created redesigned UI components and system tokens",
-      "Prototyped key flows and validated with users",
-      "Collaborated with devs to implement accessible markup and responsive styles"
+      "Performed heuristic evaluations and accessibility audits of the current platform",
+      "Created redesigned UI components and updated design tokens",
+      "Prototyped key flows and validated improvements through user feedback",
+      "Collaborated with developers to provide accessible markup and responsive styles"
     ],
     "tools": ["Figma", "HTML", "CSS", "JavaScript"],
     "gallery": ["./img/projects_thumbnails/starFish.png"],
@@ -32,12 +32,12 @@
   {
     "title": "DishDive Website",
     "slug": "dishdive-website",
-    "longSummary": "DishDive is a recipe-sharing website built with plain HTML, CSS and JavaScript. The project focused on a clean, image-forward layout and interactive features for browsing, commenting and rating dishes. It includes responsive grid layouts, filtering, and user-friendly forms for adding recipes.",
+    "longSummary": "DishDive is an interactive recipe-sharing website built with plain HTML, CSS, and JavaScript. The design focuses on a clean, image-forward layout with features including recipe browsing, user commenting, rating interactions, filtering options, and responsive grid views for desktop and mobile.",
     "responsibilities": [
-      "Designed and implemented responsive layouts",
-      "Built interactive filtering and rating UI with vanilla JavaScript",
-      "Optimized images and lazy-loading for faster page loads",
-      "Implemented accessible forms and keyboard navigation"
+      "Designed and implemented mobile-responsive layouts and components",
+      "Built interactive filtering, rating, and commenting UI with vanilla JavaScript",
+      "Optimized images and used lazy-loading to reduce page load times",
+      "Implemented accessible forms and improved keyboard navigation"
     ],
     "tools": ["HTML", "CSS", "JavaScript"],
     "gallery": ["./img/projects_thumbnails/dishDive.png"],
@@ -47,11 +47,11 @@
   {
     "title": "LawBandit Home UI Redesign",
     "slug": "lawbandit-home-ui-redesign",
-    "longSummary": "A UX research-driven case study that examined pain points on a legal education platform. The work produced wireframes, low- and high-fidelity prototypes, and recommended interaction patterns to help learners find content and track progress more effectively.",
+    "longSummary": "A UI/UX research-driven redesign of LawBandit, a legal education platform. The project examined user pain points and improved the homepage experience through clearer navigation, refined hierarchy, and more intuitive interactions. Deliverables included wireframes, prototypes, and recommended interaction patterns.",
     "responsibilities": [
-      "Conducted user research and mapped user journeys",
-      "Created wireframes and interactive prototypes",
-      "Documented design decisions and accessibility considerations"
+      "Conducted user research and mapped user journeys to identify issues",
+      "Created wireframes and interactive prototypes for improved homepage layouts",
+      "Documented design decisions and accessibility considerations for developers"
     ],
     "tools": ["Figma", "Miro"],
     "gallery": ["./img/projects_thumbnails/LawBandit.png"],
@@ -59,12 +59,12 @@
     "links": []
   },
   {
-    "title": "Badger Mart",
+    "title": "Badger Mart – AI-Assisted Campus Marketplace Concept",
     "slug": "badger-mart",
-    "longSummary": "Badger Mart is an AI-assisted campus marketplace concept for students to list, buy and sell items. The project explored search and discovery features, mobile-first checkout flows, and product listing patterns to support quick posting and fair matching between buyers and sellers.",
+    "longSummary": "Badger Mart is an AI-assisted marketplace concept for UW–Madison students to list, buy, and sell items on campus. The project explores search and discovery patterns, mobile-first listing flows, and streamlined checkout interactions. The goal was to create a fast, intuitive marketplace experience.",
     "responsibilities": [
-      "Designed product listing and search interfaces",
-      "Prototype mobile-first posting and checkout flows",
+      "Designed product listing, browsing, and search interfaces",
+      "Prototyped mobile-first posting and checkout flows",
       "Iterated on pattern library elements for consistency"
     ],
     "tools": ["Figma", "HTML", "CSS", "JavaScript"],
@@ -75,11 +75,11 @@
   {
     "title": "LPHIE Madison Chapter Website Redesign",
     "slug": "lphie-madison-chapter-website-redesign",
-    "longSummary": "A full website rebuild for the Lambda Phi Epsilon Madison chapter to modernize the look, improve responsiveness, and better promote events and recruitment. The site includes responsive templates, event listings, and contact forms tailored to the chapter's needs.",
+    "longSummary": "A full website redesign for the Lambda Phi Epsilon Madison chapter to modernize visuals, improve mobile responsiveness, and better support recruitment events. The rebuild includes responsive templates, event listings, and content structures tailored to the chapter’s communication and outreach needs.",
     "responsibilities": [
-      "Built responsive templates and event pages",
-      "Improved content structure for recruitment and alumni engagement",
-      "Worked with chapter stakeholders to iterate on content and visuals"
+      "Built responsive templates and event pages with semantic HTML and CSS",
+      "Improved content flow for recruitment and alumni engagement",
+      "Collaborated with chapter stakeholders to refine visuals and messaging"
     ],
     "tools": ["HTML", "CSS", "JavaScript", "WordPress"],
     "gallery": ["./img/exp_thumbnails/aoe.png"],
