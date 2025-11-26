@@ -1409,6 +1409,13 @@ a {
     align-items: flex-start;
     text-align: left;
   }
+  .footer-col ul.contacts-footer p {
+    align-items: start;
+    text-align: center;
+    font-size: clamp(0.9rem, 5vw, 0.75rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+  }
 
   .footer-cta {
     place-self: start;
@@ -1485,6 +1492,13 @@ a {
   .footer-col ul.contacts-footer {
     align-items: flex-start;
     text-align: left;
+  }
+  .footer-col ul.contacts-footer p {
+    align-items: start;
+    text-align: center;
+    font-size: clamp(0.9rem, 5vw, 0.75rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
   }
 
   .footer-cta {
@@ -1592,6 +1606,13 @@ a {
     align-items: center;
     text-align: left;
   }
+  .footer-col ul.contacts-footer p {
+    align-items: start;
+    text-align: center;
+    font-size: clamp(0.9rem, 5vw, 0.75rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+  }
 
   .footer-cta {
     place-self: center;
@@ -1668,6 +1689,13 @@ a {
   .footer-col ul.contacts-footer {
     align-items: center;
     text-align: left;
+  }
+  .footer-col ul.contacts-footer p {
+    align-items: start;
+    text-align: center;
+    font-size: clamp(0.9rem, 5vw, 0.75rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
   }
 
   .footer-cta {
@@ -1760,6 +1788,13 @@ a {
     align-items: center;
     text-align: left;
   }
+  .footer-col ul.contacts-footer p {
+    align-items: start;
+    text-align: center;
+    font-size: clamp(0.9rem, 5vw, 1.25rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+  }
 
   .footer-cta {
     place-self: center;
@@ -1809,7 +1844,7 @@ a {
     letter-spacing: 0.03em;
   }
   .footer-col ul.contacts-footer a {
-    font-size: clamp(0.9rem, 5vw, 1.25rem);
+    font-size: clamp(0.9rem, 5vw, 1.75rem);
     letter-spacing: 0.03em;
   }
 
@@ -1852,6 +1887,13 @@ a {
   .footer-col ul.contacts-footer {
     align-items: center;
     text-align: left;
+  }
+  .footer-col ul.contacts-footer p {
+    align-items: start;
+    text-align: center;
+    font-size: clamp(0.9rem, 5vw, 1.5rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
   }
 
   .footer-cta {
