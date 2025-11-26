@@ -752,6 +752,8 @@ a {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    margin-bottom: 2rem;
+    margin: 0;
   }
 
   .skill-table tr {
@@ -764,6 +766,9 @@ a {
     flex: 1 1 calc(50% - 1rem); /* 2 per row */
     margin: 0.5rem;
     box-sizing: border-box;
+  }
+  .skill-item {
+    height: 60%;
   }
 
   .skill-item img {
