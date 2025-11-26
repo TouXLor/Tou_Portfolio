@@ -446,6 +446,7 @@ a {
     align-items: center;
     text-align: right;
     padding-left: 5rem;
+    line-height: 1.25;
   }
 
   .about-header {
@@ -472,10 +473,11 @@ a {
     grid-template-columns: 1fr 1fr;
   }
   .bio-paragraph p {
-    font-size: 2rem;
+    font-size: 1.75rem;
     align-items: center;
     text-align: right;
     padding-left: 25rem;
+    margin-bottom: 5rem;
   }
 
   .about-header {
@@ -646,7 +648,7 @@ a {
   .resume-download-btn {
     padding: 12px 20px;
     font-size: clamp(10px, 2vw + 8px, 15px);
-    margin-left: 50rem;
+    margin-left: 25rem;
   }
 }
 
