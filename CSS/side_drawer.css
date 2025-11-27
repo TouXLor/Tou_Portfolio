@@ -223,6 +223,13 @@
 .project-drawer.open .pd-panel {
   transform: translateX(0%);
 }
+.pd-caption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
 
 /* Drawer mobile tweak: full-screen on small widths */
 @media (max-width: 640px) {

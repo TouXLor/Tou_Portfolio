@@ -30,7 +30,8 @@
       {
         "src": "./img/exp_gallery/ihc/ihc-home.png",
         "link": "https://ihconcepts.com/",
-        "alt": "IH Concepts Homepage Layout"
+        "alt": "IH Concepts Homepage Layout",
+        "caption": "Home Page"
       },
       {
         "src": "./img/exp_gallery/ihc/ihc-blog.png",
@@ -41,12 +42,14 @@
       {
         "src": "./img/exp_gallery/ihc/ihc-tutorials.png",
         "link": "https://ihconcepts.com/tutorials/",
-        "alt": "IH Concepts Tutorials Template"
+        "alt": "IH Concepts Tutorials Template",
+        "caption": "Tutorial Page"
       },
       {
         "src": "./img/exp_gallery/ihc/ihc-press.png",
         "link": "https://ihconcepts.com/press/",
-        "alt": "IH Concepts Press Page"
+        "alt": "IH Concepts Press Page",
+        "caption": "Press Page"
       }
     ],
     "dates": "Jun 2023 - Aug 2023",

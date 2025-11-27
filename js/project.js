@@ -104,22 +104,26 @@
 
   function buildContent(project) {
     if (!project) return `<p>Details not available.</p>`;
+
     const title = project.title || project.name || "Untitled";
     const type = project.type || "";
     const organization = project.organization || project.company || "";
     const long =
       project.longSummary || project.description || project.summary || "";
     const dates = project.dates || project.period || "";
+
     const tools = Array.isArray(project.tools)
       ? project.tools
       : project.tools
       ? [project.tools]
       : [];
+
     const responsibilities = Array.isArray(project.responsibilities)
       ? project.responsibilities
       : project.responsibilities
       ? [project.responsibilities]
       : [];
+
     const images = Array.isArray(project.gallery)
       ? project.gallery
       : Array.isArray(project.images)
@@ -127,80 +131,98 @@
       : project.image
       ? [project.image]
       : [];
-    // gallery supports both string URLs and objects { src, alt, link }
+
+    // gallery supports:
+    //  - "gallery": ["./img/foo.png"]
+    //  - "gallery": [{ src, alt, link, pdf, name }]
     const galleryMarkup = images.length
       ? `<div class="pd-gallery">
-      ${images
-        .map((item) => {
-          // CASE 1 — old format: "gallery": ["./img/foo.png"]
-          if (typeof item === "string") {
-            return `
-              <img 
-                src="${item}" 
-                alt="${title}" 
-                loading="lazy"
-                onerror="this.onerror=null; this.src='./img/placeholder.png'" 
-              />
-            `;
-          }
+        ${images
+          .map((item) => {
+            // CASE 1 — old format: "gallery": ["./img/foo.png"]
+            if (typeof item === "string") {
+              return `
+                <figure class="pd-gallery-item">
+                  <img 
+                    src="${item}" 
+                    alt="${title}" 
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='./img/placeholder.png'" 
+                  />
+                </figure>
+              `;
+            }
 
-          // CASE 2 — new format: "gallery": [{ src, alt, link }]
-          if (item && typeof item === "object") {
-            const src = item.src;
-            const alt = item.alt || title;
-            const link = item.link;
+            // CASE 2 — new format: "gallery": [{ src, alt, link, pdf, name }]
+            if (item && typeof item === "object") {
+              const src = item.src;
+              const alt = item.alt || title;
+              const caption = item.caption || ""; // <-- caption text
+              const href = item.pdf || item.link; // <-- PDF gets priority
 
-            if (!src) return "";
+              if (!src) return "";
 
-            const imgTag = `
-              <img 
-                src="${src}" 
-                alt="${alt}"
-                loading="lazy"
-                onerror="this.onerror=null; this.src='./img/placeholder.png'" 
-              />
-            `;
+              const imgTag = `
+                <img 
+                  src="${src}" 
+                  alt="${alt}"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='./img/placeholder.png'" 
+                />
+              `;
 
-            // If link exists, wrap image with <a>
-            return link
-              ? `<a href="${link}" target="_blank" rel="noopener">${imgTag}</a>`
-              : imgTag;
-          }
+              // wrap image + optional caption
+              return `
+                <figure class="pd-gallery-item">
+                  ${
+                    href
+                      ? `<a href="${href}" target="_blank" rel="noopener noreferrer" ${
+                          item.pdf ? 'type="application/pdf"' : ""
+                        }">${imgTag}</a>`
+                      : imgTag
+                  }
+                  ${
+                    caption
+                      ? `<figcaption class="pd-caption">${caption}</figcaption>`
+                      : ""
+                  }
+                </figure>
+              `;
+            }
 
-          return "";
-        })
-        .join("")}
-    </div>`
+            return "";
+          })
+          .join("")}
+      </div>`
       : "";
 
     return `
-      <header>
-        <small class="pd-type">${type}</small>
-        <h2>${title}</h2>
-        ${organization ? `<h3 class="pd-org">${organization}</h3>` : ""}
-        ${dates ? `<div class="pd-dates">${dates}</div>` : ""}
-      </header>
-      <section class="pd-body">
-        <p>${long}</p>
-        ${
-          responsibilities.length
-            ? `<div class="pd-resp"><h4>Responsibilities</h4><ul>${responsibilities
-                .map((r) => `<li>${r}</li>`)
-                .join("")}</ul></div>`
-            : ""
-        }
-        
-        ${
-          tools.length
-            ? `<p class="pd-tools"><strong>Tools:</strong> ${tools.join(
-                ", "
-              )}</p>`
-            : ""
-        }
-        ${galleryMarkup}
-
-      </section>
-    `;
+    <header>
+      <small class="pd-type">${type}</small>
+      <h2>${title}</h2>
+      ${organization ? `<h3 class="pd-org">${organization}</h3>` : ""}
+      ${dates ? `<div class="pd-dates">${dates}</div>` : ""}
+    </header>
+    <section class="pd-body">
+      <p>${long}</p>
+      ${
+        responsibilities.length
+          ? `<div class="pd-resp"><h4>Responsibilities</h4><ul>${responsibilities
+              .map((r) => `<li>${r}</li>`)
+              .join("")}</ul></div>`
+          : ""
+      }
+      
+      ${
+        tools.length
+          ? `<p class="pd-tools"><strong>Tools:</strong> ${tools.join(
+              ", "
+            )}</p>`
+          : ""
+      }
+      ${galleryMarkup}
+    </section>
+  `;
   }
 
   async function openDrawer(project, trigger, kind = "project") {
