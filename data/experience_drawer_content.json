@@ -35,7 +35,8 @@
       {
         "src": "./img/exp_gallery/ihc/ihc-blog.png",
         "link": "https://ihconcepts.com/blog/",
-        "alt": "IH Concepts Blog Template"
+        "alt": "IH Concepts Blog Template",
+        "caption": "Blog Page"
       },
       {
         "src": "./img/exp_gallery/ihc/ihc-tutorials.png",
@@ -64,7 +65,14 @@
       "Maintained and updated the site each semester with new events and information"
     ],
     "tools": ["HTML", "CSS", "JavaScript"],
-    "gallery": ["img/exp_thumbnails/ihc.png"],
+    "gallery": [
+      {
+        "src": "./img/exp_gallery/lphie-html-site.png",
+        "link": "https://touxlor.github.io/646-Final-Project/",
+        "alt": "IH Concepts Homepage Layout",
+        "caption": "Web Page"
+      }
+    ],
     "dates": "Sep 2022 - May 2023",
     "links": []
   },
@@ -80,7 +88,14 @@
       "Worked with the owners to iterate on content, visual style, and calls-to-action"
     ],
     "tools": ["HTML", "CSS", "JavaScript", "Figma"],
-    "gallery": ["./img/exp_thumbnails/treasureLogo.png"],
+    "gallery": [
+      {
+        "src": "./img/exp_gallery/treasure-taste-home.png",
+        "pdf": "./img/pdfs/tt/Treasure-Taste.pdf",
+        "alt": "IH Concepts Homepage Layout",
+        "caption": "Figma Design Preview"
+      }
+    ],
     "dates": "Jan 2022 - Dec 2022",
     "links": []
   },
@@ -95,8 +110,21 @@
       "Prepared print-ready files and coordinated with vendors for physical collateral"
     ],
     "tools": ["Adobe Illustrator", "Photoshop", "InDesign", "Figma"],
-    "gallery": ["./img/exp_thumbnails/gf_coverPhoto.png"],
+    "gallery": [
+      {
+        "src": "./img/exp_gallery/gf/gf-menu-one.png",
+        "alt": "Golden Flavors branding case study",
+        "pdf": "./img/pdfs/gf_pdf/gf_menu.pdf",
+        "caption": "Menu Graphic 1"
+      },
+      {
+        "src": "./img/exp_gallery/gf/gf-menu-two.png",
+        "alt": "Golden Flavors branding case study",
+        "pdf": "./img/pdfs/gf_pdf/gf_menu_2.pdf",
+        "caption": "Menu Graphic 2"
+      }
+    ],
     "dates": "May 2021 - Nov 2021",
-    "links": []
+    "links": [""]
   }
 ]
