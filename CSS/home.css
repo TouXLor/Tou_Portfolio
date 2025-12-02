@@ -55,7 +55,8 @@ body.light-mode .name-wrap .footer-top .footer-col h4,
 body.light-mode .name-wrap .footer-top h4.footer-cta,
 body.light-mode .name-track-wrap .name-ticker,
 body.light-mode .name-track-wrap .name-ticker-2,
-body.light-mode .name-track-wrap .name-ticker-3 {
+body.light-mode .name-track-wrap .name-ticker-3,
+body.light-mode .navIconImg {
   color: #222 !important;
 }
 
@@ -130,11 +131,18 @@ a {
   margin-left: -20rem;
   gap: 2em;
 }
+.navIconImg {
+  width: 40px;
+  height: 40px;
+  color: #ffffff; /* icon color */
+  transition: 0.2s;
+}
 
 .icons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 5px; /* <— add spacing here */
 }
 .links,
 .icons {
