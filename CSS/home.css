@@ -664,7 +664,7 @@ a {
   .resume-download-btn {
     padding: 12px 20px;
     font-size: clamp(10px, 2vw + 8px, 15px);
-    margin-left: 25rem;
+    margin-left: 15rem;
   }
 }
 
