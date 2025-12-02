@@ -129,10 +129,19 @@
     <div class="focus-point">
       <div class="landing-wrap">
         <div class="landing-picture">
-          <img
-            src="./img/random_stock/navylaptop.png"
-            alt="Picture of Tou Xiong Lor"
-          />
+          <picture>
+            <source
+              srcset="./img/random_stock/navylaptop-small.webp"
+              type="image/webp"
+            />
+            <img
+              src="./img/random_stock/navylaptop-small.png"
+              class="landing-img"
+              width="800"
+              height="800"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
 
@@ -270,9 +279,14 @@
         <!-- end .bio-paragraph -->
 
         <div class="picture-me">
+          <source
+            srcset="./img/random_stock/headShotTranparent.webp"
+            type="image/webp"
+          />
           <img
-            src="./img/headShotTranparent.png"
+            src="./img/headShotTranparent-small.png"
             alt="picture of Tou Xiong Lor"
+            loading="lazy"
           />
         </div>
       </div>

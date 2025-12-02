@@ -206,13 +206,24 @@ a {
 
 .landing-picture {
   position: relative;
-  z-index: 3; /* on top */
+  z-index: 3;
+  /* remove this if you ever need the image clickable */
   pointer-events: none;
+
+  /* controls how big the block can be */
+  max-width: clamp(220px, 40vw, 620px);
+  margin-inline: auto; /* center it horizontally */
+}
+
+.landing-picture picture {
+  display: block;
 }
 
 .landing-picture img {
-  max-height: 90vh; /* scale as you like */
-  height: auto;
+  display: block;
+  width: 100%; /* scales with .landing-picture */
+  height: auto; /* keeps aspect ratio */
+  max-height: 90vh; /* still respects your original limit */
 }
 
 /* ================================
