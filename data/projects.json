@@ -3,21 +3,21 @@
     "title": "CoHabit Mobile Application Design",
     "type": "UI/UX Design",
     "category": "design case",
-    "image": "./img/projects_thumbnails/cohabit.png",
+    "image": "./img/projects_thumbnails/coHabit-thumb.png",
     "summary": "Roommate matching app that helps students find compatible roommates and manage shared living tasks."
   },
   {
     "title": "StarFish Redesign",
     "type": "UI/UX Design",
     "category": "design case",
-    "image": "./img/projects_thumbnails/starFish.png",
+    "image": "./img/projects_thumbnails/starFish-thumb.png",
     "summary": "A complete UI redesign focused on improving accessibility and user flow for StarFish, a student resource platform."
   },
   {
     "title": "DishDive Website",
     "type": "Web Design & Development",
     "category": "dev design",
-    "image": "./img/projects_thumbnails/dishDive.png",
+    "image": "./img/projects_thumbnails/dishdive-thumb.png",
     "summary": "Recipe-sharing website built with HTML, CSS, and JavaScript that lets users browse, comment, and rate dishes. Designed with a clean layout and interactive features."
   },
   {

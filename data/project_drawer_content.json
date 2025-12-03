@@ -10,7 +10,14 @@
       "Performed accessibility checks and iterative usability testing"
     ],
     "tools": ["Figma", "Sketch", "Adobe XD", "Principle"],
-    "gallery": ["./img/projects_thumbnails/cohabit.png"],
+    "gallery": [
+      {
+        "src": "./img/projects_thumbnails/coHabit-thumb.png",
+        "link": "https://www.figma.com/design/drgPtx4yQRXOV5y2zHuSiO/LawBandit-HomePage-Redesign-TouXiongLor?node-id=245-30&t=MYz39z6ddwa3un5O-1",
+        "alt": "CoHabit Mobile App Design Link",
+        "caption": "CoHabit Figma Design"
+      }
+    ],
     "dates": "2023",
     "links": []
   },
@@ -25,7 +32,14 @@
       "Collaborated with developers to provide accessible markup and responsive styles"
     ],
     "tools": ["Figma", "HTML", "CSS", "JavaScript"],
-    "gallery": ["./img/projects_thumbnails/starFish.png"],
+    "gallery": [
+      {
+        "src": "./img/projects_thumbnails/starFish.png",
+        "link": "https://www.figma.com/design/JegnFb4i8FXNUTzndPhyHZ/High-Fidelity-Prototype?node-id=109-3&t=z7j0qtONbqyalvpz-1",
+        "alt": "StarFish Redesign Figma Link",
+        "caption": "StarFish Redesign Figma"
+      }
+    ],
     "dates": "2022 - 2023",
     "links": []
   },
@@ -40,7 +54,14 @@
       "Implemented accessible forms and improved keyboard navigation"
     ],
     "tools": ["HTML", "CSS", "JavaScript"],
-    "gallery": ["./img/projects_thumbnails/dishDive.png"],
+    "gallery": [
+      {
+        "src": "./img/projects_thumbnails/dishdive-thumb.png",
+        "link": "https://touxlor.github.io/FinalJS/",
+        "alt": "DishDIve Website",
+        "caption": "DishDIve Website"
+      }
+    ],
     "dates": "2021",
     "links": []
   },
@@ -54,7 +75,14 @@
       "Documented design decisions and accessibility considerations for developers"
     ],
     "tools": ["Figma", "Miro"],
-    "gallery": ["./img/projects_thumbnails/LawBandit.png"],
+    "gallery": [
+      {
+        "src": "./img/projects_thumbnails/LawBandit.png",
+        "link": "https://www.figma.com/design/drgPtx4yQRXOV5y2zHuSiO/LawBandit-HomePage-Redesign-TouXiongLor?node-id=72-30&t=JHT8BmKJN6ZnWn2X-1",
+        "alt": "LawBandit Homepage Redesign",
+        "caption": "LawBandit Figma Design"
+      }
+    ],
     "dates": "2025",
     "links": []
   },
