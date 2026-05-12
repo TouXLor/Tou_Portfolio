@@ -32,7 +32,7 @@ export default function FullScreenVideo() {
     <section
       ref={sectionRef}
       aria-label="Introduction Background Video" // ✅ SEO/A11Y FIX: Gives the section a semantic identity
-      className="relative min-h-[100dvh] w-full overflow-hidden"
+      className="relative h-screen w-full overflow-hidden"
     >
       <video
         ref={videoRef}

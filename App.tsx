@@ -239,7 +239,7 @@ const App: React.FC = () => {
 
           <main
             id="main-content"
-            className="bg-oat-cream min-h-[100dvh] text-softBlack selection:bg-cornflower selection:text-white"
+            className="bg-oat-cream h-screen text-softBlack selection:bg-cornflower selection:text-white"
           >
             {/* ✅ ADDED: React Router Routes */}
             <Routes>
