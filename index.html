@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tou Xiong Lor - Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Tou Xiong Lor, a [Software Engineer/Web Developer/Designer] specializing in [React, Tailwind, etc.]."
+    />
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    </script>
+
+    <link
+      rel="preload"
+      href="/src/img/headshot_vector_transparent.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- Tailwind CSS -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              "3xl": "1920px", // Targets your 2048px monitor
+              "6xl": "2560px", // Future-proofing for even bigger screens
+            },
+            colors: {
+              "oat-cream": "#EAE7DC",
+              "rich-black": "#050505",
+              cornflower: "#597FE8",
+              "stone-line": "#D7D1BC",
+            },
+            fontFamily: {
+              anton: ["Anton", "sans-serif"], // Add this
+              fraunces: ["Fraunces", "serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+            letterSpacing: {
+              tightest: "-0.18em",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #eae7dc;
+        overflow-x: hidden;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "framer-motion": "https://esm.sh/framer-motion@^12.34.2",
+          "lucide-react": "https://esm.sh/lucide-react@^0.575.0",
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react": "https://esm.sh/react@^19.2.4",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+          "@studio-freight/lenis": "https://esm.sh/@studio-freight/lenis@^1.0.42",
+          "gsap": "https://esm.sh/gsap@3.12.5",
+          "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger",
+          "@gsap/react": "https://esm.sh/@gsap/react@2.1.0",
+          "gsap/": "https://esm.sh/gsap@^3.14.2/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

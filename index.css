@@ -1,0 +1,153 @@
+/* --- ANTON --- */
+@font-face {
+  font-family: "Anton";
+  src: url("./src/font/Anton-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- FRAUNCES (Using the Variable Font) --- */
+/* Variable fonts are great because one file covers ALL weights */
+@font-face {
+  font-family: "Fraunces";
+  src: url("./src/font/Fraunces-VariableFont_SOFT,WONK,opsz,wght.woff2")
+    format("woff2-variations");
+  font-weight: 100 900; /* Supports the full range */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("./src/font/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.woff2")
+    format("woff2-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- POPPINS (Only the essentials) --- */
+@font-face {
+  font-family: "Poppins";
+  src: url("./src/font/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./src/font/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add Medium (500) only if you use it for nav links/subtitles */
+@font-face {
+  font-family: "Poppins";
+  src: url("./src/font/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add Black (900) since you use font-black */
+@font-face {
+  font-family: "Poppins";
+  src: url("./src/font/Poppins-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Sets your Oat Cream background and Soft Black text globally */
+    @apply bg-oat-cream text-rich-black font-poppins antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* Ensures all headings use your Fraunces font and Rich Black color */
+    @apply font-fraunces text-rich-black;
+  }
+}
+
+@layer utilities {
+  /* This is the custom class to hide the scrollbar on your left project container */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* subtle grain texture for overlays */
+  /* .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  } */
+}
+/* Hide these by default so they don't "blink" on load */
+.word-1,
+.word-2,
+.word-3,
+.portrait-wrapper,
+.intro-text,
+.cta-button {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Forces the browser to put these elements on their own hardware-accelerated layers */
+.reel-1,
+.reel-2,
+.reel-3,
+.portrait-wrapper,
+.portrait-img,
+.intro-text,
+.cta-button {
+  will-change: transform, opacity;
+}
+
+/* Fixes pixel-snapping jitter on the giant text */
+.giant-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- LENIS REQUIRED CSS --- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Hide the system cursor globally */
+body,
+a,
+button {
+  cursor: none !important;
+}
