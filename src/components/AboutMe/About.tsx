@@ -45,7 +45,7 @@ export default function About() {
       ref={sectionRef} // Attach the ref here
       id="about"
       aria-labelledby="about-heading"
-      className="min-h-screen bg-rich-black text-oat-cream py-10 md:py-16 lg:py-20 w-full overflow-hidden"
+      className="min-h-[100dvh] bg-rich-black text-oat-cream py-10 md:py-16 lg:py-20 w-full overflow-hidden"
     >
       <div className="w-[80%] lg:max-w-7xl 3xl:max-w-full mx-auto">
         {/* Added 'reveal-target' to the H1 */}

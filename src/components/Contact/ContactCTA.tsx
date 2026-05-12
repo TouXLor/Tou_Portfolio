@@ -69,7 +69,7 @@ const ContactCTA: React.FC = () => {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-32 lg:py-40 w-full overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col justify-center px-6 md:px-12 py-32 lg:py-40 w-full overflow-hidden"
     >
       {/* Vanta Background Container */}
       <div

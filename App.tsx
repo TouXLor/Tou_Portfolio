@@ -51,7 +51,7 @@ const HeroToVideoSequence = lazy(() =>
 
 // Fallback UI for ContactCTA lazy loading
 const ContactCTAFallback: React.FC = () => (
-  <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-32 lg:py-40 w-full">
+  <section className="relative min-h-[100dvh] flex flex-col justify-center px-6 md:px-12 py-32 lg:py-40 w-full">
     <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start max-w-7xl mx-auto w-full">
       <div className="flex flex-col gap-10 justify-center h-full self-center">
         <div>
@@ -160,7 +160,7 @@ const PortfolioHome = ({
       {isDesktop ? <HeroToVideoSequence /> : <Hero />}
       <Suspense
         fallback={
-          <div className="flex items-center justify-center min-h-screen">
+          <div className="flex items-center justify-center min-h-[100dvh]">
             Loading...
           </div>
         }
@@ -182,6 +182,12 @@ const PortfolioHome = ({
 
 const App: React.FC = () => {
   useEffect(() => {
+    // --- INSERT THE OPTIMIZATION HERE ---
+    ScrollTrigger.config({
+      limitCallbacks: true,
+      ignoreMobileResize: true, // This prevents the "jumping" on mobile
+    });
+    // ------------------------------------
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
@@ -233,7 +239,7 @@ const App: React.FC = () => {
 
           <main
             id="main-content"
-            className="bg-oat-cream min-h-screen text-softBlack selection:bg-cornflower selection:text-white"
+            className="bg-oat-cream min-h-[100dvh] text-softBlack selection:bg-cornflower selection:text-white"
           >
             {/* ✅ ADDED: React Router Routes */}
             <Routes>

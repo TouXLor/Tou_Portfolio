@@ -30,7 +30,7 @@ export const HeroToVideoSequence: React.FC = () => {
         <section
           ref={sequenceRef}
           aria-label="Introduction Sequence"
-          className="sequence-wrapper relative w-full h-screen overflow-hidden"
+          className="sequence-wrapper relative w-full min-h-[100dvh] overflow-hidden"
         >
           <div aria-hidden="true" className="absolute inset-0 z-0">
             <FullScreenVideo />

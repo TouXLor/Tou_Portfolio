@@ -227,7 +227,7 @@ export default function ServiceSection() {
       id="service"
       ref={sectionRef}
       aria-labelledby="services-heading"
-      className="bg-oat-cream text-rich-black font-poppins min-h-screen flex flex-col lg:flex-row relative"
+      className="bg-oat-cream text-rich-black font-poppins min-h-[100dvh] flex flex-col lg:flex-row relative"
     >
       <div
         className={`fixed inset-0 z-40 transition-opacity duration-500 ${
@@ -240,7 +240,7 @@ export default function ServiceSection() {
         tabIndex={-1}
       />
 
-      <header className="lg:w-[45%] px-8 mt-0 bg-rich-black lg:bg-transparent lg:p-8 md:p-16 lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center items-start z-10">
+      <header className="lg:w-[45%] px-8 mt-0 bg-rich-black lg:bg-transparent lg:p-8 md:p-16 lg:sticky lg:top-0 lg:min-h-[100dvh] flex flex-col justify-center items-start z-10">
         <h2
           ref={headingRef}
           id="services-heading"

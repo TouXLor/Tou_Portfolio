@@ -201,7 +201,7 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
   return (
     <header
       ref={heroRef}
-      className="relative h-screen min-h-[600px] w-full overflow-hidden flex flex-col "
+      className="relative min-h-[100dvh] min-h-[600px] w-full overflow-hidden flex flex-col "
     >
       <h1 className="sr-only">
         Tou Xiong Lor - Web Designer & Developer based in Milwaukee, WI. Site

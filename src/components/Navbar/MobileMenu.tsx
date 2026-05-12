@@ -274,7 +274,7 @@ export default function MobileMenu() {
       <div
         id="mobile-menu-panel" // ✅ A11Y FIX: Matches the button's aria-controls
         aria-hidden={!open} // ✅ A11Y FIX: Totally hides off-screen menu from assistive tech
-        className={`fixed inset-0 z-40 w-full h-screen pointer-events-none overflow-hidden ${open ? "pointer-events-auto" : ""}`}
+        className={`fixed inset-0 z-40 w-full min-h-[100dvh] pointer-events-none overflow-hidden ${open ? "pointer-events-auto" : ""}`}
       >
         {/* Colored Pre-layers */}
         <div

@@ -40,7 +40,7 @@ export default function LegalLayout() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-oat-cream py-12 px-4 sm:px-6 lg:px-8 relative"
+      className="min-h-[100dvh] bg-oat-cream py-12 px-4 sm:px-6 lg:px-8 relative"
     >
       <div
         className="absolute inset-0 z-0 opacity-30 pointer-events-none stroke-stone-line"
