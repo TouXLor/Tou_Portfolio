@@ -215,7 +215,7 @@ const App: React.FC = () => {
 
   return (
     // ✅ ADDED: BrowserRouter wraps the entire app
-    <BrowserRouter>
+    <BrowserRouter basename="/Tou_Portfolio">
       <ReactLenis
         root
         autoRaf={false}

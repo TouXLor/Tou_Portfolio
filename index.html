@@ -7,7 +7,7 @@
     <title>Tou Xiong Lor - Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Tou Xiong Lor, a [Software Engineer/Web Developer/Designer] specializing in [React, Tailwind, etc.]."
+      content="Portfolio of Tou Xiong Lor, a Web Developer and Designer specializing in React and Tailwind CSS."
     />
     <script>
       if ("scrollRestoration" in history) {
@@ -18,39 +18,11 @@
 
     <link
       rel="preload"
-      href="/src/img/headshot_vector_transparent.webp"
+      href="./src/img/headshot_vector_transparent.webp"
       as="image"
       type="image/webp"
       fetchpriority="high"
     />
-
-    <!-- Tailwind CSS -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            screens: {
-              "3xl": "1920px", // Targets your 2048px monitor
-              "6xl": "2560px", // Future-proofing for even bigger screens
-            },
-            colors: {
-              "oat-cream": "#EAE7DC",
-              "rich-black": "#050505",
-              cornflower: "#597FE8",
-              "stone-line": "#D7D1BC",
-            },
-            fontFamily: {
-              anton: ["Anton", "sans-serif"], // Add this
-              fraunces: ["Fraunces", "serif"],
-              poppins: ["Poppins", "sans-serif"],
-            },
-            letterSpacing: {
-              tightest: "-0.18em",
-            },
-          },
-        },
-      };
-    </script>
 
     <style>
       body {
@@ -89,10 +61,10 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       screens: {
-        "3xl": "1920px", // Targets your 2048px monitor
-        "4xl": "2560px", // Future-proofing for even bigger screens
+        "3xl": "1920px",
+        "4xl": "2560px",
+        "6xl": "2560px",
       },
       colors: {
         "oat-cream": "#EAE7DC",
