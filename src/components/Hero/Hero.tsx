@@ -76,11 +76,17 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
       });
 
       // 3. THE SLOT MACHINE PINNED SEQUENCE
+      // Safely check if the container exists before assigning it to prevent the console error
+      const sequenceExists = document.querySelector(".sequence-wrapper");
+
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: heroRef.current,
-          // ✅ FIX: Use string selector and boolean prop to bypass ref timing issues
-          pinnedContainer: isDesktopWrapper ? ".sequence-wrapper" : undefined,
+          // ✅ FIX: Only assign the pinned container if we are on desktop AND the element exists
+          pinnedContainer:
+            isDesktopWrapper && sequenceExists
+              ? ".sequence-wrapper"
+              : undefined,
           pin: isDesktopWrapper ? false : true,
           start: "top top",
           end: isDesktopWrapper ? "+=600%" : "+=200%",

@@ -75,16 +75,20 @@ const Footer = lazy(() => import("./src/components/Footer/Footer"));
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- ScrollManager (Kept exactly as you had it) ---
+// --- ScrollManager: sync Lenis with GSAP's ticker ---
 const ScrollManager: React.FC = () => {
-  const lenis = useLenis(ScrollTrigger.update);
+  // Use the hook without passing ScrollTrigger.update to avoid timing coupling
+  const lenis = useLenis();
 
   useEffect(() => {
     if (!lenis) return;
+    // Ensure lenis is at top on mount to avoid retained velocity
     lenis.scrollTo(0, { immediate: true });
     requestAnimationFrame(() => {
       lenis.scrollTo(0, { immediate: true });
     });
+
+    // Sync Lenis RAF with GSAP's internal ticker to prevent jittering/stuck scrolls
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
@@ -211,9 +215,19 @@ const App: React.FC = () => {
 
     const fallbackTimer = setTimeout(refreshGSAP, 1000);
 
+    // 👇 ADD THIS RESIZE OBSERVER 👇
+    // This watches the body. Whenever a lazy-loaded component (like Testimonials)
+    // injects into the DOM and changes the page height, it forces GSAP to update its math.
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+
+    resizeObserver.observe(document.body);
+
     return () => {
       window.removeEventListener("load", refreshGSAP);
       clearTimeout(fallbackTimer);
+      resizeObserver.disconnect();
     };
   }, []);
 
