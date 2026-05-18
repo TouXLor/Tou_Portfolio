@@ -213,20 +213,21 @@ const App: React.FC = () => {
       window.addEventListener("load", refreshGSAP);
     }
 
-    const fallbackTimer = setTimeout(refreshGSAP, 1000);
-
     // 👇 ADD THIS RESIZE OBSERVER 👇
     // This watches the body. Whenever a lazy-loaded component (like Testimonials)
     // injects into the DOM and changes the page height, it forces GSAP to update its math.
     const resizeObserver = new ResizeObserver(() => {
-      ScrollTrigger.refresh();
+      refreshGSAP();
     });
 
     resizeObserver.observe(document.body);
 
+    const fallbackTimer = setTimeout(refreshGSAP, 1000);
+
     return () => {
       window.removeEventListener("load", refreshGSAP);
       clearTimeout(fallbackTimer);
+      // 👇 Don't forget to clean up the observer! 👇
       resizeObserver.disconnect();
     };
   }, []);
