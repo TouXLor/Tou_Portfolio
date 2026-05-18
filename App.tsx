@@ -213,11 +213,17 @@ const App: React.FC = () => {
       window.addEventListener("load", refreshGSAP);
     }
 
+    let resizeTimer: NodeJS.Timeout;
     // 👇 ADD THIS RESIZE OBSERVER 👇
     // This watches the body. Whenever a lazy-loaded component (like Testimonials)
     // injects into the DOM and changes the page height, it forces GSAP to update its math.
     const resizeObserver = new ResizeObserver(() => {
-      refreshGSAP();
+      // Clear the previous timer if a new resize happens quickly
+      clearTimeout(resizeTimer);
+      // Wait 250ms after the page stops shifting before recalculating GSAP
+      resizeTimer = setTimeout(() => {
+        refreshGSAP();
+      }, 250);
     });
 
     resizeObserver.observe(document.body);
@@ -227,7 +233,7 @@ const App: React.FC = () => {
     return () => {
       window.removeEventListener("load", refreshGSAP);
       clearTimeout(fallbackTimer);
-      // 👇 Don't forget to clean up the observer! 👇
+      clearTimeout(resizeTimer); // Clean up the new timer
       resizeObserver.disconnect();
     };
   }, []);
@@ -254,7 +260,7 @@ const App: React.FC = () => {
 
           <main
             id="main-content"
-            className="bg-oat-cream h-screen text-softBlack selection:bg-cornflower selection:text-white"
+            className="bg-oat-cream min-h-[100dvh] text-softBlack selection:bg-cornflower selection:text-white"
           >
             {/* ✅ ADDED: React Router Routes */}
             <Routes>
