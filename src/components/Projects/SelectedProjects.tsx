@@ -346,7 +346,7 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
         {/* Pinned Frame */}
         <div
           ref={pinRef}
-          className="relative h-screen w-full overflow-hidden transform-gpu"
+          className="relative min-h-[100dvh] w-full overflow-hidden transform-gpu"
         >
           {/* Layer 2: Content Overlay - z-10 */}
           <div className="content-overlay relative z-10 flex w-full h-full px-6 lg:px-16 pointer-events-none will-change-transform">
