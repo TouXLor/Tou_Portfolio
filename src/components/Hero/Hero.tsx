@@ -314,7 +314,7 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
         </div>
       </div>
 
-      <div className="intro-text absolute top-[20vh] left-6 md:top-auto md:bottom-12 md:left-12 z-30 flex flex-col pointer-events-auto bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-[1px] bg-gradient-to-br from-white/30 to-white/10">
+      <div className="intro-text absolute top-24 left-6 sm:top-28 md:top-auto md:bottom-12 md:left-12 z-30 flex flex-col pointer-events-auto bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-[1px] bg-gradient-to-br from-white/30 to-white/10">
         <div className="bg-oat-cream/40 md:bg-transparent rounded-[calc(1rem-1px)] p-4 md:p-6 w-full h-full">
           <h2 className="font-poppins text-soft-black text-sm md:text-base lg:text-xl 3xl:text-xl font-medium flex items-center gap-2 m-0">
             <span
