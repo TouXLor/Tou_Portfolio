@@ -266,7 +266,7 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[280px] lg:max-w-[36rem] xl:max-w-[30rem] 3xl:max-w-[40rem] sm:max-w-[320px] md:max-w-[clamp(20rem,45vw,32rem)] z-10 pointer-events-none  ">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[clamp(17.5rem,60vw,36rem)] xl:max-w-[30rem] 3xl:max-w-[40rem] z-10 pointer-events-none">
         <div className="portrait-wrapper w-full h-full flex justify-center">
           <img
             src={portraitSvg}
@@ -282,7 +282,7 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
         aria-hidden="true"
       >
         <div
-          className="giant-text font-poppins font-black text-[clamp(14vw,18vw,22vw)] xl:text-[clamp(14vw,15vw,22vw)] 3xl:text-[clamp(14vw,17.7vw,22vw)] tracking-tighter flex flex-col w-full px-[5%] md:px-[10%] mb-[15vh] md:mb-0 pt-12 md:pt-16 text-transparent translate-x-3 translate-y-3 opacity-50 md:translate-x-0 md:translate-y-0 md:opacity-100"
+          className="giant-text font-poppins font-black text-[clamp(14vw,18vw,22vw)] xl:text-[clamp(14vw,15vw,22vw)] 3xl:text-[clamp(14vw,17.7vw,22vw)] tracking-tighter flex flex-col w-full px-[5%] md:px-[10%] mb-[15vh] md:mb-0 pt-12 md:pt-16 text-transparent"
           style={{ WebkitTextStroke: "2px #6495ED" }}
         >
           <div className="word-1 text-left w-full h-[0.85em] overflow-hidden ">

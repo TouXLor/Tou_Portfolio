@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
             <div
               ref={textRef}
               aria-hidden="true"
-              className="w-full flex justify-start font-poppins font-black text-cornflower text-[clamp(3rem,13vw,8rem)] md:text-[clamp(4rem,11.1vh,15vw)] lg:text-[clamp(7rem,13.7vw,10rem)] xl:text-[clamp(10rem,15.7vw,15rem)] 3xl:text-[clamp(10vw,15.7vw,18vw)] whitespace-nowrap"
+              className="w-full flex justify-start font-poppins font-black text-cornflower text-[clamp(3rem,14vw,9rem)] md:text-[clamp(4rem,11.1vh,15vw)] lg:text-[clamp(7rem,13.7vw,10rem)] xl:text-[clamp(10rem,15.7vw,15rem)] 3xl:text-[clamp(10vw,15.7vw,18vw)] whitespace-nowrap"
             >
               <span className="tracking-tightest">TOU</span>
               <span className="tracking-tightest ml-[0.13em]">XIONG</span>
