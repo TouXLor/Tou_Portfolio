@@ -176,7 +176,7 @@ function ResumeButton() {
       // Create a temporary invisible link
       const link = document.createElement("a");
       // Point it to the PDF in your public folder
-      link.href = `${import.meta.env.BASE_URL}Tou_Xiong_Lor_Resume.pdf`;
+      link.href = "/Tou_Portfolio/Tou_Xiong_Lor_Resume.pdf";
       // Tell the browser to download it instead of opening it
       link.download = "Tou_Xiong_Lor_Resume.pdf";
 
