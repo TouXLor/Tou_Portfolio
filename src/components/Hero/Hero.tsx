@@ -87,12 +87,12 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
             isDesktopWrapper && sequenceExists
               ? ".sequence-wrapper"
               : undefined,
-          // Just turn pinning off here entirely.
-          // The parent 'HeroToVideoSequence' component already handles the desktop pinning!
-          pin: false,
+          // 👇 1. Re-enable pinning for the Mobile Hero
+          pin: isDesktopWrapper ? false : true,
           start: "top top",
-          end: isDesktopWrapper ? "+=600%" : "+=200%",
-          scrub: isDesktopWrapper ? 0.8 : 2.2,
+          // 👇 2. Give mobile a +250% scroll distance to allow room for the overlap
+          end: isDesktopWrapper ? "+=600%" : "+=250%",
+          scrub: isDesktopWrapper ? 0.8 : 1.5,
         },
       });
 
