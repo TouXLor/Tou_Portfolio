@@ -341,7 +341,7 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
       id="works"
       ref={sectionRef} // ✅ Added ref for GSAP scope
       aria-labelledby="projects-heading"
-      className="relative z-[101] -mt-[100svh] bg-oat-cream pb-10 lg:pb-0"
+      className="relative z-[101] mt-0 lg:-mt-[100svh] bg-oat-cream pb-10 lg:pb-0"
     >
       <h2 id="projects-heading" className="sr-only">
         Selected Works

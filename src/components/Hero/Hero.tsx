@@ -215,7 +215,6 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
         Tou Xiong Lor - Web Designer & Developer based in Milwaukee, WI. Site
         Grows Brand.
       </h1>
-
       <div
         aria-hidden="true"
         className="hero-door-left absolute top-0 left-0 w-1/2 h-full bg-oat-cream z-[-1]"
@@ -224,7 +223,6 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
         aria-hidden="true"
         className="hero-door-right absolute top-0 right-0 w-1/2 h-full bg-oat-cream z-[-1]"
       ></div>
-
       <div
         className="preloader absolute inset-0 z-[999] bg-soft-black flex items-center justify-center overflow-hidden pointer-events-none bg-rich-black"
         aria-hidden="true"
@@ -267,7 +265,6 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
           </div>
         </div>
       </div>
-
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[clamp(17.5rem,60vw,36rem)] xl:max-w-[30rem] 3xl:max-w-[40rem] z-10 pointer-events-none">
         <div className="portrait-wrapper w-full h-full flex justify-center">
           <img
@@ -278,13 +275,12 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
           />
         </div>
       </div>
-
       <div
         className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none leading-[0.85]"
         aria-hidden="true"
       >
         <div
-          className="giant-text font-poppins font-black text-[clamp(14vw,18vw,22vw)] xl:text-[clamp(14vw,15vw,22vw)] 3xl:text-[clamp(14vw,17.7vw,22vw)] tracking-tighter flex flex-col w-full px-[5%] md:px-[10%] mb-[15vh] md:mb-0 pt-12 md:pt-16 text-transparent"
+          className="giant-text font-poppins font-black text-[clamp(14vw,18vw,22vw)] xl:text-[clamp(14vw,15vw,22vw)] 3xl:text-[clamp(14vw,17.7vw,22vw)] tracking-tighter flex flex-col w-full px-[5%] md:px-[10%] mb-24 md:mb-0 pt-12 md:pt-16 text-transparent"
           style={{ WebkitTextStroke: "2px #6495ED" }}
         >
           <div className="word-1 text-left w-full h-[0.85em] overflow-hidden ">
@@ -315,7 +311,6 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
           </div>
         </div>
       </div>
-
       <div className="intro-text absolute top-24 left-6 sm:top-28 md:top-auto md:bottom-12 md:left-12 z-30 flex flex-col pointer-events-auto bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-[1px] bg-gradient-to-br from-white/30 to-white/10">
         <div className="bg-oat-cream/40 md:bg-transparent rounded-[calc(1rem-1px)] p-4 md:p-6 w-full h-full">
           <h2 className="font-poppins text-soft-black text-sm md:text-base lg:text-xl 3xl:text-xl font-medium flex items-center gap-2 m-0">
@@ -330,7 +325,6 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
           </p>
         </div>
       </div>
-
       <div className="cta-button absolute bottom-8 right-6 md:bottom-12 md:right-12 z-30 pointer-events-auto">
         <a
           href="#project"
