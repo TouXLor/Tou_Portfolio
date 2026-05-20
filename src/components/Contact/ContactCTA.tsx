@@ -92,7 +92,7 @@ const ContactCTA: React.FC = () => {
             >
               Get in Touch
             </h2>
-            <p className="text-5xl md:text-6xl lg:text-7xl  font-bold text-rich-black font-anton tracking-widest leading-[1.1]">
+            <p className="text-[clamp(3rem,8vw,5rem)] font-bold text-rich-black font-anton tracking-widest leading-[1.1]">
               {/* LET<span className="text-cornflower">'</span>S WORK <br />
               TOGETHER<span className="text-cornflower">.</span> */}
               YOUR B<span className="text-cornflower">U</span>SINESS

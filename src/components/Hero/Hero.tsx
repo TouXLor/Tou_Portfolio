@@ -79,15 +79,17 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
       // Safely check if the container exists before assigning it to prevent the console error
       const sequenceExists = document.querySelector(".sequence-wrapper");
 
+      // ✅ To this:
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: heroRef.current,
-          // ✅ FIX: Only assign the pinned container if we are on desktop AND the element exists
           pinnedContainer:
             isDesktopWrapper && sequenceExists
               ? ".sequence-wrapper"
               : undefined,
-          pin: isDesktopWrapper ? false : true,
+          // Just turn pinning off here entirely.
+          // The parent 'HeroToVideoSequence' component already handles the desktop pinning!
+          pin: false,
           start: "top top",
           end: isDesktopWrapper ? "+=600%" : "+=200%",
           scrub: isDesktopWrapper ? 0.8 : 2.2,
@@ -236,7 +238,7 @@ export const Hero: React.FC<HeroProps> = ({ isDesktopWrapper = false }) => {
         className="absolute inset-0 flex flex-col items-center justify-center z-0 pointer-events-none leading-[0.85] "
         aria-hidden="true"
       >
-        <div className="giant-text font-poppins font-black text-cornflower text-[clamp(14vw,18vw,22vw)] xl:text-[clamp(14vw,15vw,22vw)] 3xl:text-[clamp(14vw,17.7vw,22vw)] tracking-tighter flex flex-col w-full px-[5%] md:px-[10%] mb-[15vh] md:mb-0 pt-12 md:pt-16">
+        <div className="giant-text font-poppins font-black text-cornflower text-[clamp(14vw,18vw,22vw)] xl:text-[clamp(14vw,15vw,22vw)] 3xl:text-[clamp(14vw,17.7vw,22vw)] tracking-tighter flex flex-col w-full px-[5%] md:px-[10%] mb-24 md:mb-0 pt-12 md:pt-16">
           <div className="word-1 text-left w-full h-[0.85em] overflow-hidden ">
             <div className="reel-1 flex flex-col w-full ">
               <span className="block h-[0.85em] leading-[0.85]">TOU</span>

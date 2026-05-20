@@ -282,7 +282,7 @@ export default function ServiceSection() {
           tabIndex={-1}
         />
 
-        <div className="py-16 lg:py-[25vh] px-4 md:px-8 overflow-hidden">
+        <div className="py-16 md:py-32 lg:py-48 px-4 md:px-8 overflow-hidden">
           {/* ✅ A11Y FIX: Added role="list" to the grid container */}
           <div
             ref={containerRef}

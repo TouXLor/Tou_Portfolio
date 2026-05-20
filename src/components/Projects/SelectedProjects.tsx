@@ -310,16 +310,27 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
     return () => clearInterval(timer);
   }, [isHovered, currentIndex]);
 
-  // ✅ Upgraded to useGSAP + Added Scope
+  // ✅ To this (Wrapping it in matchMedia):
   useGSAP(
     () => {
-      ScrollTrigger.create({
-        trigger: pinRef.current,
-        pin: true,
-        start: "top top",
-        end: "+=50%",
-        pinSpacing: true,
-        anticipatePin: 1,
+      let mm = gsap.matchMedia();
+
+      // DESKTOP & LARGE TABLETS (1024px and up)
+      mm.add("(min-width: 1024px)", () => {
+        ScrollTrigger.create({
+          trigger: pinRef.current,
+          pin: true, // Only pin on desktop!
+          start: "top top",
+          end: "+=100%",
+          // ... keep your existing desktop scroll logic here
+        });
+      });
+
+      // MOBILE & SMALL TABLETS (1023px and down)
+      mm.add("(max-width: 1023px)", () => {
+        // We do NOT pin here.
+        // Let the projects flow naturally down the page like a normal vertical list.
+        // GSAP will automatically kill the desktop pin when the screen resizes below 1024px!
       });
     },
     { scope: sectionRef },
@@ -330,7 +341,7 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
       id="works"
       ref={sectionRef} // ✅ Added ref for GSAP scope
       aria-labelledby="projects-heading"
-      className="relative z-[101] -mt-[100dvh] bg-oat-cream pb-10 lg:pb-0"
+      className="relative z-[101] -mt-[100svh] bg-oat-cream pb-10 lg:pb-0"
     >
       <h2 id="projects-heading" className="sr-only">
         Selected Works
@@ -346,7 +357,7 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
         {/* Pinned Frame */}
         <div
           ref={pinRef}
-          className="relative min-h-[100dvh] w-full overflow-hidden transform-gpu"
+          className="relative min-h-[100svh] w-full overflow-hidden transform-gpu"
         >
           {/* Layer 2: Content Overlay - z-10 */}
           <div className="content-overlay relative z-10 flex w-full h-full px-6 lg:px-16 pointer-events-none will-change-transform">
@@ -354,7 +365,7 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
             <div
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="w-full lg:w-[85%] xl:w-[80%] pt-0 lg:pt-16 3xl:pt-0 pb-0 lg:pb-20 mt-14 flex flex-col h-full pointer-events-auto overflow-y-auto lg:overflow-y-visible"
+              className="w-full lg:w-[85%] xl:w-[80%] pt-0 lg:pt-16 3xl:pt-0 pb-0 lg:pb-20 mt-14 flex flex-col h-auto min-h-full pointer-events-auto overflow-y-auto lg:overflow-y-visible"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {/* Mobile Title */}
@@ -481,7 +492,7 @@ export const SelectedProjects = forwardRef<HTMLDivElement, {}>((props, ref) => {
 
               {/* Active Project Content */}
               <article
-                className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full mx-auto h-auto lg:h-[75%] lg:flex-none overflow-visible lg:overflow-hidden pr-0 lg:pr-8"
+                className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full mx-auto h-auto lg:min-h-[75%] lg:flex-none overflow-visible lg:overflow-hidden pr-0 lg:pr-8"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {/* Text Info */}

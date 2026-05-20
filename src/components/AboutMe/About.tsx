@@ -51,7 +51,7 @@ export default function About() {
         {/* Added 'reveal-target' to the H1 */}
         <h1
           id="about-heading"
-          className="reveal-target font-anton text-5xl text-oat-cream md:text-6xl lg:text-5xl xl:text-7xl 3xl:text-8xl mb-12 md:mb-16 tracking-wide opacity-0"
+          className="reveal-target font-anton text-oat-cream text-[clamp(3rem,6vw,6rem)] mb-12 md:mb-16 tracking-wide opacity-0"
         >
           LEARN <span className="text-cornflower ">ABOUT ME</span> BEYOND THE
           PORTFOLIO

@@ -39,22 +39,25 @@ export const Testimonials: React.FC = () => {
   }, [isHovered]);
 
   // 3. ADDED YOUR SCROLLTRIGGER ANIMATION
-  useGSAP(() => {
-    gsap.fromTo(
-      ".testimonial-quote",
-      { opacity: 0, scale: 0.9 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: containerRef.current, // Updated to match your ref name
-          start: "top 60%",
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".testimonial-quote",
+        { opacity: 0, scale: 0.9 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current, // Updated to match your ref name
+            start: "top 60%",
+          },
         },
-      }
-    );
-  }, { scope: containerRef }); // Automatically runs once on mount
+      );
+    },
+    { scope: containerRef },
+  ); // Automatically runs once on mount
 
   // Existing GSAP Animation: Snap and Fade In on state change
   useGSAP(
@@ -123,7 +126,7 @@ export const Testimonials: React.FC = () => {
         {/* TITLE */}
         <h2
           id="testimonials-heading"
-          className="text-cornflower font-anton text-3xl md:text-4xl lg:text-5xl 3xl:text-6xl font-normal tracking-wide uppercase mb-12"
+          className="text-cornflower font-anton text-[clamp(1.875rem,5vw,4rem)] font-normal tracking-wide uppercase mb-12"
         >
           Testimonials
         </h2>
@@ -141,7 +144,7 @@ export const Testimonials: React.FC = () => {
         >
           <div className="flex items-center justify-center min-h-[250px] md:min-h-[200px] lg:min-h-[220px] w-full">
             {/* 4. ADDED CLASSNAME HERE */}
-            <blockquote className="testimonial-quote font-fraunces italic text-3xl md:text-5xl lg:text-6xl text-oat-cream leading-tight">
+            <blockquote className="testimonial-quote font-fraunces italic  text-[clamp(1.875rem,5vw,4rem)] text-oat-cream leading-tight">
               <p>&quot;{current.quote}&quot;</p>
             </blockquote>
           </div>

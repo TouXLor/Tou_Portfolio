@@ -94,7 +94,7 @@ export default function Experience() {
       <div className="mb-16 md:mb-24">
         <h2
           id="experience-heading"
-          className="text-cornflower text-3xl md:text-4xl lg:text-5xl 3xl:text-6xl font-anton font-normal uppercase mb-1"
+          className="text-cornflower text-[clamp(1.875rem,5vw,4rem)] font-anton font-normal uppercase mb-1"
         >
           Experience
         </h2>
