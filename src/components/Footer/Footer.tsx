@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import upWork from "../../img/upWork-icon.png";
+import fiverr from "../../img/fiverr-icon.svg";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -102,7 +104,10 @@ const Footer: React.FC = () => {
                   aria-label="Follow me on Instagram"
                   className="hover:text-cornflower hover:-translate-y-1 transition-all cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cornflower rounded-md block"
                 >
-                  <Instagram className="w-6 h-6" aria-hidden="true" />
+                  <Instagram
+                    className="h-[2.5rem] w-auto object-contain"
+                    aria-hidden="true"
+                  />
                 </a>
               </li>
               <li>
@@ -113,7 +118,10 @@ const Footer: React.FC = () => {
                   aria-label="Follow me on Facebook"
                   className="hover:text-cornflower hover:-translate-y-1 transition-all cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cornflower rounded-md block"
                 >
-                  <Facebook className="w-6 h-6" aria-hidden="true" />
+                  <Facebook
+                    className="h-[2.5rem] w-auto object-contain"
+                    aria-hidden="true"
+                  />
                 </a>
               </li>
               <li>
@@ -124,7 +132,10 @@ const Footer: React.FC = () => {
                   aria-label="View my GitHub projects"
                   className="hover:text-cornflower hover:-translate-y-1 transition-all cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cornflower rounded-md block"
                 >
-                  <Github className="w-6 h-6" aria-hidden="true" />
+                  <Github
+                    className="h-[2.5rem] w-auto object-contain"
+                    aria-hidden="true"
+                  />
                 </a>
               </li>
               <li>
@@ -135,7 +146,41 @@ const Footer: React.FC = () => {
                   aria-label="Connect with me on LinkedIn"
                   className="hover:text-cornflower hover:-translate-y-1 transition-all cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cornflower rounded-md block"
                 >
-                  <Linkedin className="w-6 h-6" aria-hidden="true" />
+                  <Linkedin
+                    className="h-[2.5rem] w-auto object-contain"
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.upwork.com/freelancers/~016b8ccf33c6c1247f?mp_source=share"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex justify-center items-center hover:scale-105 transition-transform"
+                  aria-label="Upwork Profile"
+                >
+                  {/* Removed the border wrapper and set height to 55px to match the button */}
+                  <img
+                    src={upWork}
+                    alt="Upwork"
+                    className="h-[2.5rem] w-auto object-contain"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.fiverr.com/s/WEaGGv5"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex justify-center items-center hover:scale-105 transition-transform"
+                  aria-label="Fiverr Profile"
+                >
+                  <img
+                    src={fiverr}
+                    alt="Fiverr"
+                    className="h-[2.5rem] w-auto object-contain"
+                  />
                 </a>
               </li>
             </ul>

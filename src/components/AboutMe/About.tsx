@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutMeHeadshot from "../../img/about-Imgs/AboutMe_Headshot.webp";
+import upWork from "../../img/upWork-icon.svg";
+import fiverr from "../../img/fiverr-icon.svg";
 
 // Register the GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
