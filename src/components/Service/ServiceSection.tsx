@@ -26,7 +26,7 @@ const SERVICES_DATA = [
     bgImageSrc: GraphicImage,
     description:
       "Crafting intuitive user interfaces and compelling graphic designs that elevate your brand identity and engage your target audience.",
-    pricing: "$1,000 - $5,000+ depending on project scope and complexity",
+    pricing: "$700 - $2,500+ depending on project scope and complexity",
     columnStyle: "left",
   },
   {
@@ -44,7 +44,7 @@ const SERVICES_DATA = [
     bgImageSrc: WebImage,
     description:
       "Building responsive, high-performance websites with cutting-edge technologies. We turn complex problems into elegant digital solutions.",
-    pricing: "$2,500 - $10,000+ depending on project scope and complexity",
+    pricing: "$450 - $1,200+ depending on project scope and complexity",
     columnStyle: "center",
   },
   {
@@ -62,7 +62,7 @@ const SERVICES_DATA = [
     imageAlt: "SEO Optimization 3D",
     description:
       "Data-driven SEO strategies to improve your search rankings, drive organic traffic, and maximize your online visibility and growth.",
-    pricing: "$1,000 - $3,000+/mo depending on project scope and complexity",
+    pricing: "$350 - $1,500+/mo depending on project scope and complexity",
     columnStyle: "right",
   },
 ];
